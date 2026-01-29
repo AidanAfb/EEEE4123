@@ -18,10 +18,6 @@
 -- 
 ----------------------------------------------------------------------------------
 
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -31,6 +27,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
 entity xor_gate is
     Port ( in1 : in STD_LOGIC;
            in2 : in STD_LOGIC;
@@ -38,9 +38,18 @@ entity xor_gate is
 end xor_gate;
 
 architecture Behavioral of xor_gate is
-    signal tmp1, tmp2 : STD_LOGIC;
+   signal tmp1, tmp2 : STD_LOGIC;
+   
 begin
+    and_not0: entity work.and_not
+    port map(
+        in1 => in1,
+        in2 => in2,
+        out1 => tmp1);
+    and_not1: entity work.and_not
+    port map(
+        in1 => in2,
+        in2 => in1,
+        out1 => tmp2);
     out1 <= tmp1 or tmp2;
-    tmp1 <= (in1 and (not in2));
-    tmp2 <= ((not in1) and in2);
 end Behavioral;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1769679925">
+<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1769683305">
   <File Type="PA-TCL" Name="xor_gate.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="xor_gate_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="xor_gate_reports.tcl"/>
@@ -11,6 +11,20 @@
   <File Type="VDS-TIMING-PB" Name="xor_gate_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Downloads/and_not.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/and_not.vhd"/>
+        <Attr Name="ImportTime" Val="1769682255"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/and_not.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/xor_gate.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
