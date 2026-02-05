@@ -21,7 +21,7 @@ Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0110")(0,3)\]
 Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1000011101111000")(0...]
 Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111000100000000000...]
 Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10010110")(0,7)\]
-Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11101000")(0,7)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1110000101111000")(0...]
 Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11101110111011101110...]
 Compiling architecture structure of entity xil_defaultlib.adder [adder_default]
 Compiling architecture behavioral of entity xil_defaultlib.adder_tb

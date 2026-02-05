@@ -46,7 +46,6 @@ begin
             a2 => a2,
             a3 => a3
         );
-    
     stim_proc: process
     
     begin
@@ -54,10 +53,15 @@ begin
     a1 <= "1011"; -- -5
     a2 <= "0110"; -- 6
     
-    wait for 10us;
+    wait for 5us;
     
     a1 <= std_logic_vector(to_signed(5,4)); -- 5
     a2 <= "0110"; -- 6
+    
+    wait for 5us;
+    
+    a1 <= "1110"; -- -1
+    a2 <= "1101"; -- -2
     
     wait;
     end process;

@@ -40,12 +40,12 @@ entity adder is
 end adder;
 
 architecture Behavioral of adder is
-    signal a1i, a2i, a3i : unsigned(4 downto 0);
+    signal a1i, a2i, a3i : signed(4 downto 0);
 
 begin
     -- input extension
-    a1i <= unsigned('0' & a1);
-    a2i <= unsigned('0' & a2);
+    a1i <= signed(a1(1) & a1); -- Concattinating the MSB to maintain sign
+    a2i <= signed(a2(3) & a2);
     
     a3i <= a1i + a2i;
     a3 <= std_logic_vector(a3i);
