@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Thu Feb  5 10:50:31 2026
+-- Date        : Thu Feb  5 10:57:58 2026
 -- Host        : WUIP76820 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Users/eeyaa63/Downloads/EEEE4123/Lab1/Lab1.sim/sim_1/synth/func/xsim/adder_tb_func_synth.vhd

@@ -51,22 +51,22 @@ begin
     a1 <= std_logic_vector(to_signed(1,4)); -- 1
     a2 <= std_logic_vector(to_signed(-1,4)); -- -1
     
-    wait for 5us;
+    wait for 1us;
     
     a1 <= std_logic_vector(to_signed(5,4)); -- 5
     a2 <= std_logic_vector(to_signed(5,4)); -- 5
     
-    wait for 5us;
+    wait for 1us;
     
     a1 <= std_logic_vector(to_signed(-4,4)); -- -4
     a2 <= std_logic_vector(to_signed(-3,4)); -- -3
     
-    wait for 5us;
+    wait for 1us;
     
     a1 <= std_logic_vector(to_signed(3,4)); -- 3
     a2 <= std_logic_vector(to_signed(4,4)); -- 4
     
-    wait for 5us;
+    wait for 1us;
     
     a1 <= std_logic_vector(to_signed(-5,4)); -- -5
     a2 <= std_logic_vector(to_signed(-5,4)); -- -5
