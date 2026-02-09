@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"temp_cond_tb_func_synth.vhd" \
+"../../../../../Lab2.srcs/sim_1/new/temp_cond_tb.vhd" \
+
+# Do not sort compile order
+nosort
