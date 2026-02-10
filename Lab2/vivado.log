@@ -21,3 +21,9 @@ open_project: Time (s): cpu = 00:00:34 ; elapsed = 00:00:23 . Memory (MB): peak 
 update_compile_order -fileset sources_1
 WARNING: [Common 17-9] Error reading message records.
 WARNING: [Common 17-9] Error reading message records.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Process appears to be on host 'WUIP76915' and cannot be killed from host 'WUIP76808'
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 10 10:56:51 2026...

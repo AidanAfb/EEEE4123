@@ -12,3 +12,4 @@
 start_gui
 open_project C:/Users/eeyaa63/Documents/GitHub/EEEE4123/Lab2/Lab2.xpr
 update_compile_order -fileset sources_1
+reset_run synth_1

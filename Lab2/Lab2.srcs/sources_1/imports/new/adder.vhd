@@ -32,25 +32,20 @@ entity adder is
     Port ( a1 : in STD_LOGIC_VECTOR (7 downto 0);
            a2 : in STD_LOGIC_VECTOR (7 downto 0);
            a3 : out STD_LOGIC_VECTOR (7 downto 0));
-           --ov : out std_logic);
+
 end adder;
 
 architecture Behavioral of adder is
     signal a1i, a2i, a3i : signed(8 downto 0);
-    --signal ovi : std_logic;
+
 
 begin
     -- input extension
-    a1i <= signed(a1(7) & a1); -- Concattinating the MSB to maintain sign
+    a1i <= signed(a1(7) & a1); -- Concattinating the MSB to maintain sign after addition
     a2i <= signed(a2(7) & a2);
     
     a3i <= a1i + a2i;
     
-    --ovi <= std_logic(a3i(4) xor a3i(3));
-    --ovi <= (a1i(4) xor a3i(3)) and not (a1i(4) xor a2i(4));
-    
-    a3 <= std_logic_vector(a3i(7 downto 0));
-    --a3 <= std_logic_vector(a3i(3 downto 0)) when ovi = '0' else "1000" when a3i(4) = '1' else "0111";
-    --ov <= ovi;
+    a3 <= std_logic_vector(a3i(7 downto 0)); -- Return result without additional sign bit
 
 end Behavioral;

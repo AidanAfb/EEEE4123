@@ -23,11 +23,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity temp_cond_tb is
 --  Port ( );
 end temp_cond_tb;
@@ -40,25 +35,25 @@ begin
     DUT : entity work.temp_cond
         port map (
             temp_raw => temp_raw,
-            temp_c => tempf
+            temp_f => tempf
         );
         
     stimprocess : process
     begin
         
-        temp_raw <= std_logic_vector(to_signed(62, 8)); -- 19.375 C
+        temp_raw <= std_logic_vector(to_signed(62, 8)); -- (19.375 C / 40) * 128 = 62.0
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(32, 8)); -- 10.0 C
+        temp_raw <= std_logic_vector(to_signed(32, 8)); -- (10.0 C / 40) * 128 = 32
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(0, 8)); -- 0 C
+        temp_raw <= std_logic_vector(to_signed(0, 8)); -- (0.0 C / 40) * 128 = 0
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(-16, 8)); -- -5 C
+        temp_raw <= std_logic_vector(to_signed(-16, 8)); -- (-5.0 C / 40) * 128 = -`6
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(-122, 8)); -- -38.1875 C
+        temp_raw <= std_logic_vector(to_signed(-122, 8)); -- (-38.1875 C / 40) * 128 = -128
         wait for 5us;
         
         wait;

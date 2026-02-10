@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Tue Feb 10 10:31:58 2026
+-- Date        : Tue Feb 10 10:57:15 2026
 -- Host        : WUIP76808 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Users/eeyaa63/Documents/GitHub/EEEE4123/Lab2/Lab2.sim/sim_1/synth/func/xsim/temp_cond_tb_func_synth.vhd
@@ -16,7 +16,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity multiplier is
   port (
-    temp_c_OBUF : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    temp_f_OBUF : out STD_LOGIC_VECTOR ( 7 downto 0 );
     temp_raw_IBUF : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end multiplier;
@@ -84,7 +84,7 @@ architecture STRUCTURE of multiplier is
   signal m3i_carry_n_5 : STD_LOGIC;
   signal m3i_carry_n_6 : STD_LOGIC;
   signal m3i_carry_n_7 : STD_LOGIC;
-  signal \temp_c_OBUF[7]_inst_i_2_n_0\ : STD_LOGIC;
+  signal \temp_f_OBUF[7]_inst_i_2_n_0\ : STD_LOGIC;
   signal \NLW_m3i__27_carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_m3i__27_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_m3i_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
@@ -95,12 +95,12 @@ architecture STRUCTURE of multiplier is
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \m3i__27_carry_i_8\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \m3i__27_carry_i_9\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[0]_inst_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[1]_inst_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[2]_inst_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[3]_inst_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[4]_inst_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \temp_c_OBUF[7]_inst_i_2\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[0]_inst_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[1]_inst_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[2]_inst_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[3]_inst_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[4]_inst_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \temp_f_OBUF[7]_inst_i_2\ : label is "soft_lutpair2";
 begin
 \m3i__27_carry\: unisim.vcomponents.CARRY4
      port map (
@@ -515,24 +515,24 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I0 => temp_raw_IBUF(1),
       O => m3i_carry_i_3_n_0
     );
-\temp_c_OBUF[0]_inst_i_1\: unisim.vcomponents.LUT1
+\temp_f_OBUF[0]_inst_i_1\: unisim.vcomponents.LUT1
     generic map(
       INIT => X"1"
     )
         port map (
       I0 => a1(0),
-      O => temp_c_OBUF(0)
+      O => temp_f_OBUF(0)
     );
-\temp_c_OBUF[1]_inst_i_1\: unisim.vcomponents.LUT2
+\temp_f_OBUF[1]_inst_i_1\: unisim.vcomponents.LUT2
     generic map(
       INIT => X"9"
     )
         port map (
       I0 => a1(0),
       I1 => a1(1),
-      O => temp_c_OBUF(1)
+      O => temp_f_OBUF(1)
     );
-\temp_c_OBUF[2]_inst_i_1\: unisim.vcomponents.LUT3
+\temp_f_OBUF[2]_inst_i_1\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"E1"
     )
@@ -540,9 +540,9 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I0 => a1(1),
       I1 => a1(0),
       I2 => a1(2),
-      O => temp_c_OBUF(2)
+      O => temp_f_OBUF(2)
     );
-\temp_c_OBUF[3]_inst_i_1\: unisim.vcomponents.LUT4
+\temp_f_OBUF[3]_inst_i_1\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"01FE"
     )
@@ -551,9 +551,9 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I1 => a1(0),
       I2 => a1(1),
       I3 => a1(3),
-      O => temp_c_OBUF(3)
+      O => temp_f_OBUF(3)
     );
-\temp_c_OBUF[4]_inst_i_1\: unisim.vcomponents.LUT5
+\temp_f_OBUF[4]_inst_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"5557AAA8"
     )
@@ -563,9 +563,9 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I2 => a1(0),
       I3 => a1(2),
       I4 => a1(4),
-      O => temp_c_OBUF(4)
+      O => temp_f_OBUF(4)
     );
-\temp_c_OBUF[5]_inst_i_1\: unisim.vcomponents.LUT6
+\temp_f_OBUF[5]_inst_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FE00000001FFFFFF"
     )
@@ -576,9 +576,9 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I3 => a1(3),
       I4 => a1(4),
       I5 => a1(5),
-      O => temp_c_OBUF(5)
+      O => temp_f_OBUF(5)
     );
-\temp_c_OBUF[6]_inst_i_1\: unisim.vcomponents.LUT5
+\temp_f_OBUF[6]_inst_i_1\: unisim.vcomponents.LUT5
     generic map(
       INIT => X"1555EAAA"
     )
@@ -586,24 +586,24 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I0 => a1(5),
       I1 => a1(4),
       I2 => a1(3),
-      I3 => \temp_c_OBUF[7]_inst_i_2_n_0\,
+      I3 => \temp_f_OBUF[7]_inst_i_2_n_0\,
       I4 => a1(6),
-      O => temp_c_OBUF(6)
+      O => temp_f_OBUF(6)
     );
-\temp_c_OBUF[7]_inst_i_1\: unisim.vcomponents.LUT6
+\temp_f_OBUF[7]_inst_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"55557FFFAAAA8000"
     )
         port map (
       I0 => a1(6),
-      I1 => \temp_c_OBUF[7]_inst_i_2_n_0\,
+      I1 => \temp_f_OBUF[7]_inst_i_2_n_0\,
       I2 => a1(3),
       I3 => a1(4),
       I4 => a1(5),
       I5 => a1(7),
-      O => temp_c_OBUF(7)
+      O => temp_f_OBUF(7)
     );
-\temp_c_OBUF[7]_inst_i_2\: unisim.vcomponents.LUT3
+\temp_f_OBUF[7]_inst_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"FE"
     )
@@ -611,7 +611,7 @@ m3i_carry_i_3: unisim.vcomponents.LUT1
       I0 => a1(1),
       I1 => a1(0),
       I2 => a1(2),
-      O => \temp_c_OBUF[7]_inst_i_2_n_0\
+      O => \temp_f_OBUF[7]_inst_i_2_n_0\
     );
 end STRUCTURE;
 library IEEE;
@@ -621,60 +621,60 @@ use UNISIM.VCOMPONENTS.ALL;
 entity temp_cond is
   port (
     temp_raw : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    temp_c : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    temp_f : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of temp_cond : entity is true;
 end temp_cond;
 
 architecture STRUCTURE of temp_cond is
-  signal temp_c_OBUF : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal temp_f_OBUF : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal temp_raw_IBUF : STD_LOGIC_VECTOR ( 7 downto 0 );
 begin
 multiplier: entity work.multiplier
      port map (
-      temp_c_OBUF(7 downto 0) => temp_c_OBUF(7 downto 0),
+      temp_f_OBUF(7 downto 0) => temp_f_OBUF(7 downto 0),
       temp_raw_IBUF(7 downto 0) => temp_raw_IBUF(7 downto 0)
     );
-\temp_c_OBUF[0]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[0]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(0),
-      O => temp_c(0)
+      I => temp_f_OBUF(0),
+      O => temp_f(0)
     );
-\temp_c_OBUF[1]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[1]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(1),
-      O => temp_c(1)
+      I => temp_f_OBUF(1),
+      O => temp_f(1)
     );
-\temp_c_OBUF[2]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[2]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(2),
-      O => temp_c(2)
+      I => temp_f_OBUF(2),
+      O => temp_f(2)
     );
-\temp_c_OBUF[3]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[3]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(3),
-      O => temp_c(3)
+      I => temp_f_OBUF(3),
+      O => temp_f(3)
     );
-\temp_c_OBUF[4]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[4]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(4),
-      O => temp_c(4)
+      I => temp_f_OBUF(4),
+      O => temp_f(4)
     );
-\temp_c_OBUF[5]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[5]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(5),
-      O => temp_c(5)
+      I => temp_f_OBUF(5),
+      O => temp_f(5)
     );
-\temp_c_OBUF[6]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[6]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(6),
-      O => temp_c(6)
+      I => temp_f_OBUF(6),
+      O => temp_f(6)
     );
-\temp_c_OBUF[7]_inst\: unisim.vcomponents.OBUF
+\temp_f_OBUF[7]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => temp_c_OBUF(7),
-      O => temp_c(7)
+      I => temp_f_OBUF(7),
+      O => temp_f(7)
     );
 \temp_raw_IBUF[0]_inst\: unisim.vcomponents.IBUF
      port map (
