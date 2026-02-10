@@ -37,3 +37,25 @@ run 10 us
 run 10 us
 run 10 us
 run 10 us
+close_sim
+launch_simulation -mode post-synthesis -type functional
+source temp_cond_tb.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+close_design
+launch_simulation -mode post-synthesis -type functional
+source temp_cond_tb.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+close_sim

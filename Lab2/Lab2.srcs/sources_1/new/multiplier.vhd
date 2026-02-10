@@ -43,6 +43,6 @@ begin
     
     m3i <= m1i*m2i;
     
-    m3 <= std_logic_vector(m3i(14 to 7));
+    m3 <= std_logic_vector(m3i(14 downto 7));
 
 end Behavioral;

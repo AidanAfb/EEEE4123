@@ -11,7 +11,7 @@ end temp_cond;
 architecture Behavioral of temp_cond is
 
     signal a, b : std_logic_vector(7 downto 0);
-    signal m_res : std_logic_vector(7 downto 0);
+    signal m_res : std_logic_vector(15 downto 0); -- CHANGE THIS BACK TO 7
     
 
 begin
@@ -19,13 +19,13 @@ begin
 	-- the two following lines are incomplete!
 	-- puts the correct value for a and b
     a <= temp_raw; -- Temp in celcius in Q7 format
-    b <= std_logic_vector(to_signed(230,8)); -- 230 is the 1.8 conversion factor in Q7
+    b <= std_logic_vector(to_signed(281,8)); -- 2.198 * 128 = 281
     
 	-- instantiate here your adder
     adder : entity work.adder
         port map (
-            a1 => m_res,
-            a2 => std_logic_vector(to_signed(4096, 8)),
+            a1 => m_res(15 downto 8),
+            a2 => std_logic_vector(to_signed(5009, 8)), -- offset of scaled 32
             a3 => temp_c
             );
               
@@ -34,7 +34,7 @@ begin
 	   port map (
 	   m1 => a,
 	   m2 => b,
-	   m3 => m_res
+	   m3 => m_res(15 downto 8)
 	   );
     
 end Behavioral;
