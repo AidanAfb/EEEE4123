@@ -1,5 +1,5 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab2/Lab2.sim/sim_1/synth/func/xsim/temp_cond_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Documents/GitHub/EEEE4123/Lab2/Lab2.sim/sim_1/synth/func/xsim/temp_cond_tb_func_synth.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'multiplier'
 INFO: [VRFC 10-3107] analyzing entity 'temp_cond'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab2/Lab2.srcs/sim_1/new/temp_cond_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Documents/GitHub/EEEE4123/Lab2/Lab2.srcs/sim_1/new/temp_cond_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'temp_cond_tb'

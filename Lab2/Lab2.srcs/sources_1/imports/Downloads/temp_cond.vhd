@@ -19,16 +19,8 @@ begin
 	-- the two following lines are incomplete!
 	-- puts the correct value for a and b
     a <= temp_raw; -- Temp in celcius in Q7 format
-    b <= std_logic_vector(to_signed(281,8)); -- 2.198 * 128 = 281
+    b <= std_logic_vector(to_signed(89,8)); -- 2.198 * 128 = 281
     
-	-- instantiate here your adder
-    adder : entity work.adder
-        port map (
-            a1 => m_res(15 downto 8),
-            a2 => std_logic_vector(to_signed(5009, 8)), -- offset of scaled 32
-            a3 => temp_c
-            );
-              
     -- instantiate here your multiplier
 	multiplier : entity work.multiplier
 	   port map (
@@ -36,5 +28,13 @@ begin
 	   m2 => b,
 	   m3 => m_res(15 downto 8)
 	   );
+    
+	-- instantiate here your adder
+    adder : entity work.adder
+        port map (
+            a1 => m_res(15 downto 8),
+            a2 => std_logic_vector(to_signed(39, 8)), -- offset of scaled 32
+            a3 => temp_c
+            );
     
 end Behavioral;

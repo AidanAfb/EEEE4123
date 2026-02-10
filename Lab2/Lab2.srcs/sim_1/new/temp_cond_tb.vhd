@@ -46,19 +46,19 @@ begin
     stimprocess : process
     begin
         
-        temp_raw <= std_logic_vector(to_signed(2480, 8)); -- 19.375 C
+        temp_raw <= std_logic_vector(to_signed(62, 8)); -- 19.375 C
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(1280, 8)); -- 10.0 C
+        temp_raw <= std_logic_vector(to_signed(32, 8)); -- 10.0 C
         wait for 5us;
         
         temp_raw <= std_logic_vector(to_signed(0, 8)); -- 0 C
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(-640, 8)); -- -5 C
+        temp_raw <= std_logic_vector(to_signed(-16, 8)); -- -5 C
         wait for 5us;
         
-        temp_raw <= std_logic_vector(to_signed(-4880, 8)); -- -38.1875 C
+        temp_raw <= std_logic_vector(to_signed(-122, 8)); -- -38.1875 C
         wait for 5us;
         
         wait;
