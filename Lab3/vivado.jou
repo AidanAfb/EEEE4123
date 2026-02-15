@@ -18,3 +18,8 @@ wait_on_run synth_1
 reset_run synth_1
 launch_runs synth_1 -jobs 2
 wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_simulation -mode post-synthesis -type functional
+update_compile_order -fileset sim_1

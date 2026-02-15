@@ -192,3 +192,170 @@ dismissDialog("Starting Design Runs"); // bx (cp)
 // Elapsed time: 20 seconds
 selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
 dismissDialog("Synthesis Completed"); // ah (cp)
+// Elapsed time: 165 seconds
+selectCodeEditor("counter.vhd", 1223, 755); // cl (w, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3); // B (D, cp)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, counter_tb(Behavioral) (counter_tb.vhd)]", 5, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, counter_tb(Behavioral) (counter_tb.vhd)]", 5, false); // B (D, cp)
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, counter_tb(Behavioral) (counter_tb.vhd)]", 5, false); // B (D, cp)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, counter_tb(Behavioral) (counter_tb.vhd)]", 5, false, false, false, false, false, true); // B (D, cp) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("counter_tb.vhd", 379, 821); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 303, 851); // cl (w, cp)
+typeControlKey((HResource) null, "counter_tb.vhd", 'v'); // cl (w, cp)
+selectButton("RDIResource.HInputHandler_UNICODE_QUOTES_DOUBLE_QUOTES_OR_DASHES_Yes", "Yes"); // JButton (C, I)
+selectCodeEditor("counter_tb.vhd", 289, 323); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 95, 357); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("counter_tb.vhd", 131, 491); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("counter_tb.vhd", 351, 347); // cl (w, cp)
+// Elapsed time: 13 seconds
+selectCodeEditor("counter_tb.vhd", 471, 211); // cl (w, cp)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("counter_tb.vhd", 119, 121); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 177, 139); // cl (w, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_UNDO, (String) null); // B (f, cp)
+selectButton(RDIResourceCommand.RDICommands_REDO, (String) null); // B (f, cp)
+selectCodeEditor("counter_tb.vhd", 459, 211); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 575, 333); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 14, false); // u (Q, cp)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// bx (cp):  Resetting Runs : addNotify
+selectButton("PAResourceQtoS.RunRun_TASK_HAS_ALREADY_COMPLETED_AND_UP_TO_DATE_OK", "OK"); // JButton (C, I)
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+// Tcl Message: reset_run synth_1 
+// f (cp): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bx (cp):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cp)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 2 
+// Tcl Message: [Sun Feb 15 16:04:01 2026] Launched synth_1... Run output will be captured here: C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 4 seconds
+dismissDialog("Starting Design Runs"); // bx (cp)
+// TclEventType: RUN_COMPLETED
+// ah (cp): Synthesis Completed: addNotify
+// Elapsed time: 20 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ah)
+dismissDialog("Synthesis Completed"); // ah (cp)
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Simulation, Run Simulation]", 10, false); // u (Q, cp)
+selectMenuItem(PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_SYNTHESIS_FUNCTIONAL, "Run Post-Synthesis Functional Simulation"); // af (al, cp)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RUN_POST_SYNTHESIS_FUNCTIONAL
+// TclEventType: FILE_SET_CHANGE
+// e (cp):  Run Simulation : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: LAUNCH_SIM
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: launch_simulation -mode post-synthesis -type functional 
+// Tcl Message: INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim' INFO: [SIM-utils-51] Simulation object is 'sim_1' 
+// Tcl Message: Design is defaulting to impl run constrset: constrs_1 Design is defaulting to synth run part: xc7a15tcpg236-1 
+// HMemoryUtils.trashcanNow. Engine heap size: 918 MB. GUI used memory: 71 MB. Current time: 2/15/26, 4:04:29 PM GMT
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,110 MB. GUI used memory: 71 MB. Current time: 2/15/26, 4:04:34 PM GMT
+// [Engine Memory]: 1,157 MB (+292437kb) [00:16:35]
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 1s
+// Xgd.load filename: C:/Xilinx/Vivado/2018.3/data/parts/xilinx/artix7/devint/artix7/xc7a15t/xc7a15t.xgd; ZipEntry: xc7a15t_detail.xgd elapsed time: 1.6s
+// [Engine Memory]: 1,263 MB (+50845kb) [00:16:39]
+// Device: addNotify
+// DeviceView Instantiated
+// PAPropertyPanels.initPanels (counter_tb.vhd) elapsed time: 0.2s
+// [GUI Memory]: 143 MB (+7888kb) [00:16:41]
+// WARNING: HEventQueue.dispatchEvent() is taking  5595 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2018.3 INFO: [Device 21-403] Loading part xc7a15tcpg236-1 INFO: [Project 1-570] Preparing netlist for logic optimization INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 985.766 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: open_run: Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1141.496 ; gain = 380.461 
+// Device view-level: 0.0
+// WARNING: HEventQueue.dispatchEvent() is taking  1351 ms.
+// Tcl Message: INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'... INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd" INFO: [SIM-utils-36] Netlist generated:C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd INFO: [SIM-utils-54] Inspecting design source files for 'counter_tb' in fileset 'sim_1'... INFO: [USF-XSim-2] XSim::Compile design 
+// Tcl Message: INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim' 
+// Tcl Message: "xvhdl --incr --relax -prj counter_tb_vhdl.prj" 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,476 MB. GUI used memory: 106 MB. Current time: 2/15/26, 4:04:54 PM GMT
+// RouteApi::initDelayMediator elapsed time: 14.3s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Message: run_program: Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1585.594 ; gain = 424.500 
+// Tcl Message: INFO: [USF-XSim-69] 'compile' step finished in '12' seconds INFO: [USF-XSim-99] Step results log file:'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/xvhdl.log' 
+// Tcl Message: ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/xvhdl.log' file for more information. ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation. 
+// Tcl Message: launch_simulation: Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 1585.594 ; gain = 824.559 
+// Tcl Message: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  
+// HOptionPane Error: 'ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.  (Run Simulation)'
+// [Engine Memory]: 1,704 MB (+395710kb) [00:17:17]
+// 'd' command handler elapsed time: 81 seconds
+// Elapsed time: 81 seconds
+selectButton("RDIResource.ProgressDialog_ERROR_ENCOUNTERED_PLEASE_SEE_TCL_OK", "OK"); // JButton (C, I)
+// a (cp): Critical Messages: addNotify
+// [GUI Memory]: 157 MB (+6475kb) [00:17:49]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,735 MB. GUI used memory: 105 MB. Current time: 2/15/26, 4:05:49 PM GMT
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/xvhdl.log' file for more information.", 0); // b (D, a)
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.", 1); // b (D, a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cp)
+// Elapsed time: 156 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 889, 118); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 889, 118, false, false, false, false, true); // dr (af, cp) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1027, 172); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1027, 188); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 861, 158); // dr (af, cp)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 963, 196); // dr (af, cp)
+// Elapsed time: 44 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "counter.vhd", 2); // k (j, cp)
+selectCodeEditor("counter.vhd", 361, 335); // cl (w, cp)
+typeControlKey((HResource) null, "counter.vhd", 'c'); // cl (w, cp)
+// WARNING: HEventQueue.dispatchEvent() is taking  42350 ms.
+// Elapsed time: 58 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "counter_tb.vhd", 3); // k (j, cp)
+selectCodeEditor("counter_tb.vhd", 571, 193); // cl (w, cp)
+typeControlKey((HResource) null, "counter_tb.vhd", 'c'); // cl (w, cp)
+// Elapsed time: 19 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1011, 216); // dr (af, cp)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dr (af, cp)
+// Elapsed time: 24 seconds
+selectCodeEditor("counter_tb.vhd", 299, 583); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 75, 661); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 85, 633); // cl (w, cp)
+// Elapsed time: 38 seconds
+selectCodeEditor("counter_tb.vhd", 303, 545); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 531, 379); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 9, 401); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 541, 419); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 61 seconds
+selectCodeEditor("counter_tb.vhd", 7, 451); // cl (w, cp)
+// Tcl Message: update_compile_order -fileset sim_1 
+selectCodeEditor("counter_tb.vhd", 5, 481); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 417, 415); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+selectCodeEditor("counter_tb.vhd", 219, 609); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 493, 323); // cl (w, cp)
+selectCodeEditor("counter_tb.vhd", 321, 421); // cl (w, cp)
+// Elapsed time: 58 seconds
+selectCodeEditor("counter_tb.vhd", 329, 383); // cl (w, cp)
+// TclEventType: FILE_SET_CHANGE

@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Feb 15 15:58:45 2026
-# Process ID: 4320
+# Start of session at: Sun Feb 15 16:04:03 2026
+# Process ID: 12868
 # Current directory: C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.runs/synth_1
 # Command line: vivado.exe -log counter.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source counter.tcl
 # Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.runs/synth_1/counter.vds
