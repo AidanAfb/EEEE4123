@@ -1,4 +1,5 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/blinking_led_tb_func_synth.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'counter'
-INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'counter_tb'
+INFO: [VRFC 10-3107] analyzing entity 'blinking_led'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/blinking_led_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'blinking_led_tb'
