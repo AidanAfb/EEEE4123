@@ -1426,3 +1426,9 @@ run 1 s
 run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:11 . Memory (MB): peak = 2206.148 ; gain = 0.000
 run 3 s
 run: Time (s): cpu = 00:00:07 ; elapsed = 00:00:33 . Memory (MB): peak = 2206.148 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Feb 16 22:49:16 2026...

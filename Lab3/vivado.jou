@@ -148,3 +148,5 @@ run 1 ms
 run 1 s
 run 1 s
 run 3 s
+close_sim
+close_sim
