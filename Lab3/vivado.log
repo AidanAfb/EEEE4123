@@ -349,3 +349,245 @@ INFO: [USF-XSim-96] XSim completed. Design snapshot 'counter_tb_func_synth' load
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
 launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:16 . Memory (MB): peak = 2043.828 ; gain = 0.000
 run 10 us
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.runs/synth_1
+
+launch_runs synth_1 -jobs 2
+[Mon Feb 16 11:15:45 2026] Launched synth_1...
+Run output will be captured here: C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_design
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a15tcpg236-1
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2043.828 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+"xvhdl --incr --relax -prj counter_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d79f2abae2134e00971626f884795195 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot counter_tb_func_synth xil_defaultlib.counter_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0001")(0,3)\]
+Compiling architecture fdce_v of entity unisim.FDCE [fdce_default]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10010000000010010000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100000000001100000...]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1001000000001001")(0...]
+Compiling architecture structure of entity xil_defaultlib.counter [counter_default]
+Compiling architecture arch of entity xil_defaultlib.counter_tb
+Built simulation snapshot counter_tb_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "counter_tb_func_synth -key {Post-Synthesis:sim_1:Functional:counter_tb} -tclbatch {counter_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source counter_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+xsim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2043.828 ; gain = 0.000
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'counter_tb_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 2043.828 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+"xvhdl --incr --relax -prj counter_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d79f2abae2134e00971626f884795195 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot counter_tb_func_synth xil_defaultlib.counter_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0001")(0,3)\]
+Compiling architecture fdce_v of entity unisim.FDCE [fdce_default]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10010000000010010000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100000000001100000...]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1001000000001001")(0...]
+Compiling architecture structure of entity xil_defaultlib.counter [counter_default]
+Compiling architecture arch of entity xil_defaultlib.counter_tb
+Built simulation snapshot counter_tb_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "counter_tb_func_synth -key {Post-Synthesis:sim_1:Functional:counter_tb} -tclbatch {counter_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source counter_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'counter_tb_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:09 . Memory (MB): peak = 2043.828 ; gain = 0.000
+run 10 s
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+run: Time (s): cpu = 00:02:02 ; elapsed = 00:14:14 . Memory (MB): peak = 2043.828 ; gain = 0.000
+INFO: [Common 17-344] 'run' was cancelled
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation -mode post-synthesis -type functional
+INFO: [Vivado 12-5682] Launching post-synthesis functional simulation in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-24] Writing simulation netlist file for design 'synth_1'...
+INFO: [SIM-utils-26] write_vhdl -mode funcsim -nolib -force -file "C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd"
+INFO: [SIM-utils-36] Netlist generated:C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd
+INFO: [SIM-utils-54] Inspecting design source files for 'counter_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+"xvhdl --incr --relax -prj counter_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim/counter_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto d79f2abae2134e00971626f884795195 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot counter_tb_func_synth xil_defaultlib.counter_tb -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling architecture bufg_v of entity unisim.BUFG [bufg_default]
+Compiling architecture ibuf_v of entity unisim.IBUF [\IBUF(1,9)(1,1)(1,4)(1,7)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0010")(0,3)\]
+Compiling architecture lut2_v of entity unisim.LUT2 [\LUT2(init="0001")(0,3)\]
+Compiling architecture fdce_v of entity unisim.FDCE [fdce_default]
+Compiling architecture carry4_v of entity unisim.CARRY4 [carry4_default]
+Compiling architecture obuf_v of entity unisim.OBUF [\OBUF(1,9)(1,7)(1,4)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10010000000010010000...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="01100000000001100000...]
+Compiling architecture lut1_v of entity unisim.LUT1 [\LUT1(init="0001")(0,3)\]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1001000000001001")(0...]
+Compiling architecture structure of entity xil_defaultlib.counter [counter_default]
+Compiling architecture arch of entity xil_defaultlib.counter_tb
+Built simulation snapshot counter_tb_func_synth
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Mac/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.sim/sim_1/synth/func/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "counter_tb_func_synth -key {Post-Synthesis:sim_1:Functional:counter_tb} -tclbatch {counter_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source counter_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'counter_tb_func_synth' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 2043.828 ; gain = 0.000
+run 50 us
+run 50 us

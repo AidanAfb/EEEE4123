@@ -1,24 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 02/15/2026 03:45:16 PM
--- Design Name: 
--- Module Name: counter_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -56,13 +35,7 @@ begin
     
     stim_process: process
     begin
-        cnt_max <= std_logic_vector(to_unsigned(21,32));
-        
-        rst <= '1';
-        wait for 20ns;
-        rst <= '0';
-        
-        wait for 100ns;
+        cnt_max <= std_logic_vector(to_unsigned(2000,32)); -- Setting the max value of counter
         
         wait;
     end process;

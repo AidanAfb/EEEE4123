@@ -56,3 +56,19 @@ close_design
 launch_simulation -mode post-synthesis -type functional
 source counter_tb.tcl
 run 10 us
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+close_sim
+close_design
+launch_simulation -mode post-synthesis -type functional
+source counter_tb.tcl
+close_sim
+launch_simulation -mode post-synthesis -type functional
+source counter_tb.tcl
+run 10 s
+close_sim
+launch_simulation -mode post-synthesis -type functional
+source counter_tb.tcl
+run 50 us
+run 50 us
