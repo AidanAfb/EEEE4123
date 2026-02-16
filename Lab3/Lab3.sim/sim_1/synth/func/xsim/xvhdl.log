@@ -2,6 +2,3 @@ INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/La
 INFO: [VRFC 10-3107] analyzing entity 'counter'
 INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'counter_tb'
-ERROR: [VRFC 10-1412] syntax error near . [//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd:47]
-ERROR: [VRFC 10-3782] unit 'arch' ignored due to previous errors [//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd:33]
-INFO: [VRFC 10-3070] VHDL file '//psf/Home/Documents/GitHub/EEEE4123/Lab3/Lab3.srcs/sim_1/new/counter_tb.vhd' ignored due to errors
