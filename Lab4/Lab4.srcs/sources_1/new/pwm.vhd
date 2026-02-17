@@ -11,9 +11,11 @@ entity pwm is
 end pwm;
 
 architecture arch of pwm is
+    -- Input buffer on the duty cycle amount
     signal input_buffer, input_buffer_n : unsigned(N-1 downto 0); 
     signal cnt, cnt_n: unsigned(N-1 downto 0);
     signal cnt_rst : std_logic;
+    -- signal for when the counter is reset to update duty buffer
    
 begin
     process(clk,rst)
@@ -30,6 +32,7 @@ begin
     
     cnt_rst <= '1' when cnt = (2**N - 1) else '0';
     
+    -- When counter resets update duty buffer
     input_buffer_n <= unsigned(duty) when cnt_rst = '1' else input_buffer;
 
     -- Output
