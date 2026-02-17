@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Feb 16 23:29:48 2026
+-- Date        : Tue Feb 17 14:12:07 2026
 -- Host        : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Mac/Home/Documents/GitHub/EEEE4123/Lab4/Lab4.sim/sim_1/synth/func/xsim/pwm_tb_func_synth.vhd

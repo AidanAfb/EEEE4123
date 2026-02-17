@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1771283793">
+<GenRun Id="synth_1" LaunchPart="xc7a15tcpg236-1" LaunchTime="1771337278">
   <File Type="PA-TCL" Name="pwm.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="pwm_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="pwm_reports.tcl"/>
@@ -36,9 +36,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>
