@@ -16,6 +16,8 @@ architecture arch of pow_3 is
     signal u1i, u1i_n, u2i, u2i_n, y1, y2, y3 : std_logic_vector (15 downto 0);
     signal yi, yi_n : std_logic_vector (7 downto 0);
 
+    -- registers
+    signal y1_n, y2_n, y3_n : std_logic_vector (15 downto 0);
 begin
 
     process(clk, rst)
@@ -38,23 +40,23 @@ begin
     generic map(N => 16)
     port map (m1 => y1,
               m2 => y1,
-              m3 => y2);
+              m3 => y2_n);
               
     mul1 : entity work.mul_q
     generic map(N => 16)
     port map (m1 => y1,
               m2 => y2,
-              m3 => y3);
+              m3 => y3_n);
               
     -- adder
     adder0 : entity work.adder_so_sat
     generic map(N => 16)
     port map (a1 => u1i,
               a2 => u2i,
-              a3 => y1,
+              a3 => y1_n,
               ov => open);
     
     yi_n <= y3(15 downto 8);
-    y <= yi;
+    y <= yi_n;
     
 end arch;
