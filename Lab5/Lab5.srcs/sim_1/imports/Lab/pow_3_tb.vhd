@@ -43,6 +43,8 @@ begin
         u1 <= std_logic_vector(to_signed(19,8)); -- 0.15
         u2 <= std_logic_vector(to_signed(90,8)); -- 0.7     y = 0.6141 ->  79
 
+        wait for 2us;
+
         wait;
     end process;
 

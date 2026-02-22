@@ -1,4 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.sim/sim_1/synth/func/xsim/pow_3_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.sim/sim_1/synth/func/xsim/pow_3_tb_func_synth.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'pow_3'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.srcs/sim_1/imports/Lab/pow_3_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.srcs/sim_1/imports/Lab/pow_3_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'pow_3_tb'

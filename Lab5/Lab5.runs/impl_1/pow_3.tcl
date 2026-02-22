@@ -68,12 +68,12 @@ set rc [catch {
   create_project -in_memory -part xc7a15tcpg236-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.cache/wt [current_project]
-  set_property parent.project_path C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.xpr [current_project]
-  set_property ip_output_repo C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.cache/wt [current_project]
+  set_property parent.project_path C:/Mac/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.xpr [current_project]
+  set_property ip_output_repo C:/Mac/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.runs/synth_1/pow_3.dcp
-  read_xdc C:/Users/eeyaa63/Downloads/EEEE4123/Lab5/Lab5.srcs/constrs_1/imports/Lab/pow_3_constr.xdc
+  add_files -quiet C:/Mac/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.runs/synth_1/pow_3.dcp
+  read_xdc C:/Mac/Home/Documents/GitHub/EEEE4123/Lab5/Lab5.srcs/constrs_1/imports/Lab/pow_3_constr.xdc
   link_design -top pow_3 -part xc7a15tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]
