@@ -1,7 +1,9 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/debouncing_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/debouncing_tb_func_synth.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'debouncing'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'edge_moore'
+INFO: [VRFC 10-3107] analyzing entity 'walking_led'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'debouncing'
+WARNING: [VRFC 10-3607] overwriting existing primary unit 'debouncing' [//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing.vhd:6]
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'debouncing_tb'
-ERROR: [VRFC 10-3342] formal 'n' is not a generic [C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing_tb.vhd:21]
-ERROR: [VRFC 10-3782] unit 'tb' ignored due to previous errors [C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing_tb.vhd:8]
-INFO: [VRFC 10-3070] VHDL file 'C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.srcs/sources_1/imports/Lab/debouncing_tb.vhd' ignored due to errors

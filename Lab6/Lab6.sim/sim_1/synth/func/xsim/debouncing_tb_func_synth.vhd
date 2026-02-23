@@ -1,11 +1,11 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Thu Feb 19 10:25:28 2026
--- Host        : WUIP76820 running 64-bit major release  (build 9200)
+-- Date        : Mon Feb 23 22:49:37 2026
+-- Host        : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
---               C:/Users/eeyaa63/Downloads/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/debouncing_tb_func_synth.vhd
--- Design      : debouncing
+--               C:/Mac/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/debouncing_tb_func_synth.vhd
+-- Design      : walking_led
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7a15tcpg236-1
@@ -16,31 +16,18 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity debouncing is
   port (
-    clk : in STD_LOGIC;
-    rst : in STD_LOGIC;
-    u : in STD_LOGIC;
-    delay : in STD_LOGIC_VECTOR ( 9 downto 0 );
-    y : out STD_LOGIC
+    debounce_out : out STD_LOGIC;
+    button_IBUF : in STD_LOGIC;
+    clk_IBUF_BUFG : in STD_LOGIC;
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of debouncing : entity is true;
-  attribute N : integer;
-  attribute N of debouncing : entity is 10;
 end debouncing;
 
 architecture STRUCTURE of debouncing is
   signal \FSM_sequential_state[0]_i_1_n_0\ : STD_LOGIC;
   signal \FSM_sequential_state[1]_i_1_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_state[1]_i_3_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_state[1]_i_4_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_state[1]_i_5_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_state[1]_i_6_n_0\ : STD_LOGIC;
-  signal \FSM_sequential_state_reg[1]_i_2_n_1\ : STD_LOGIC;
-  signal \FSM_sequential_state_reg[1]_i_2_n_2\ : STD_LOGIC;
-  signal \FSM_sequential_state_reg[1]_i_2_n_3\ : STD_LOGIC;
-  signal clk_IBUF : STD_LOGIC;
-  signal clk_IBUF_BUFG : STD_LOGIC;
-  signal cnt : STD_LOGIC_VECTOR ( 9 downto 0 );
+  signal \FSM_sequential_state[1]_i_2_n_0\ : STD_LOGIC;
+  signal cnt : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal \cnt[1]_i_1_n_0\ : STD_LOGIC;
   signal \cnt[2]_i_1_n_0\ : STD_LOGIC;
   signal \cnt[3]_i_1_n_0\ : STD_LOGIC;
@@ -49,101 +36,60 @@ architecture STRUCTURE of debouncing is
   signal \cnt[5]_i_2_n_0\ : STD_LOGIC;
   signal \cnt[6]_i_1_n_0\ : STD_LOGIC;
   signal \cnt[7]_i_1_n_0\ : STD_LOGIC;
-  signal \cnt[8]_i_1_n_0\ : STD_LOGIC;
-  signal \cnt[9]_i_1_n_0\ : STD_LOGIC;
-  signal \cnt[9]_i_2_n_0\ : STD_LOGIC;
+  signal \cnt[7]_i_2_n_0\ : STD_LOGIC;
   signal cnt_n : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal delay_IBUF : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal p_0_in : STD_LOGIC;
-  signal rst_IBUF : STD_LOGIC;
+  signal \^debounce_out\ : STD_LOGIC;
   signal state : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal u_IBUF : STD_LOGIC;
-  signal y_OBUF : STD_LOGIC;
-  signal \NLW_FSM_sequential_state_reg[1]_i_2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \FSM_sequential_state[0]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \FSM_sequential_state[1]_i_1\ : label is "soft_lutpair2";
   attribute FSM_ENCODED_STATES : string;
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[0]\ : label is "wait0:01,wait1:11,zero:00,one:10";
   attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[1]\ : label is "wait0:01,wait1:11,zero:00,one:10";
-  attribute SOFT_HLUTNM of \cnt[0]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \cnt[1]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \cnt[1]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \cnt[2]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \cnt[3]_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \cnt[5]_i_1\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \cnt[6]_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \cnt[5]_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \cnt[6]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \cnt[7]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \cnt[8]_i_1\ : label is "soft_lutpair1";
 begin
-\FSM_sequential_state[0]_i_1\: unisim.vcomponents.LUT4
+  debounce_out <= \^debounce_out\;
+\FSM_sequential_state[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"143C"
+      INIT => X"00FEFE0000FFFF00"
     )
         port map (
-      I0 => p_0_in,
-      I1 => u_IBUF,
-      I2 => y_OBUF,
-      I3 => state(0),
+      I0 => \FSM_sequential_state[1]_i_2_n_0\,
+      I1 => cnt(6),
+      I2 => cnt(7),
+      I3 => button_IBUF,
+      I4 => \^debounce_out\,
+      I5 => state(0),
       O => \FSM_sequential_state[0]_i_1_n_0\
     );
-\FSM_sequential_state[1]_i_1\: unisim.vcomponents.LUT4
+\FSM_sequential_state[1]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"E4CC"
+      INIT => X"CCCCCCCCCCCCCCE4"
     )
         port map (
       I0 => state(0),
-      I1 => y_OBUF,
-      I2 => u_IBUF,
-      I3 => p_0_in,
+      I1 => \^debounce_out\,
+      I2 => button_IBUF,
+      I3 => cnt(7),
+      I4 => cnt(6),
+      I5 => \FSM_sequential_state[1]_i_2_n_0\,
       O => \FSM_sequential_state[1]_i_1_n_0\
     );
-\FSM_sequential_state[1]_i_3\: unisim.vcomponents.LUT2
+\FSM_sequential_state[1]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"9"
-    )
-        port map (
-      I0 => delay_IBUF(9),
-      I1 => cnt(9),
-      O => \FSM_sequential_state[1]_i_3_n_0\
-    );
-\FSM_sequential_state[1]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"9009000000009009"
-    )
-        port map (
-      I0 => cnt(6),
-      I1 => delay_IBUF(6),
-      I2 => delay_IBUF(8),
-      I3 => cnt(8),
-      I4 => delay_IBUF(7),
-      I5 => cnt(7),
-      O => \FSM_sequential_state[1]_i_4_n_0\
-    );
-\FSM_sequential_state[1]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"9009000000009009"
-    )
-        port map (
-      I0 => cnt(3),
-      I1 => delay_IBUF(3),
-      I2 => delay_IBUF(5),
-      I3 => cnt(5),
-      I4 => delay_IBUF(4),
-      I5 => cnt(4),
-      O => \FSM_sequential_state[1]_i_5_n_0\
-    );
-\FSM_sequential_state[1]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"9009000000009009"
+      INIT => X"FFFFFFFFFFFFFFFE"
     )
         port map (
       I0 => cnt(0),
-      I1 => delay_IBUF(0),
-      I2 => delay_IBUF(2),
-      I3 => cnt(2),
-      I4 => delay_IBUF(1),
-      I5 => cnt(1),
-      O => \FSM_sequential_state[1]_i_6_n_0\
+      I1 => cnt(1),
+      I2 => cnt(2),
+      I3 => cnt(3),
+      I4 => cnt(4),
+      I5 => cnt(5),
+      O => \FSM_sequential_state[1]_i_2_n_0\
     );
 \FSM_sequential_state_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -152,7 +98,7 @@ begin
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \FSM_sequential_state[0]_i_1_n_0\,
       Q => state(0)
     );
@@ -163,34 +109,9 @@ begin
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \FSM_sequential_state[1]_i_1_n_0\,
-      Q => y_OBUF
-    );
-\FSM_sequential_state_reg[1]_i_2\: unisim.vcomponents.CARRY4
-     port map (
-      CI => '0',
-      CO(3) => p_0_in,
-      CO(2) => \FSM_sequential_state_reg[1]_i_2_n_1\,
-      CO(1) => \FSM_sequential_state_reg[1]_i_2_n_2\,
-      CO(0) => \FSM_sequential_state_reg[1]_i_2_n_3\,
-      CYINIT => '1',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_FSM_sequential_state_reg[1]_i_2_O_UNCONNECTED\(3 downto 0),
-      S(3) => \FSM_sequential_state[1]_i_3_n_0\,
-      S(2) => \FSM_sequential_state[1]_i_4_n_0\,
-      S(1) => \FSM_sequential_state[1]_i_5_n_0\,
-      S(0) => \FSM_sequential_state[1]_i_6_n_0\
-    );
-clk_IBUF_BUFG_inst: unisim.vcomponents.BUFG
-     port map (
-      I => clk_IBUF,
-      O => clk_IBUF_BUFG
-    );
-clk_IBUF_inst: unisim.vcomponents.IBUF
-     port map (
-      I => clk,
-      O => clk_IBUF
+      Q => \^debounce_out\
     );
 \cnt[0]_i_1\: unisim.vcomponents.LUT2
     generic map(
@@ -276,7 +197,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       I0 => state(0),
       I1 => cnt(6),
-      I2 => \cnt[9]_i_2_n_0\,
+      I2 => \cnt[7]_i_2_n_0\,
       O => \cnt[6]_i_1_n_0\
     );
 \cnt[7]_i_1\: unisim.vcomponents.LUT4
@@ -287,35 +208,10 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
       I0 => state(0),
       I1 => cnt(7),
       I2 => cnt(6),
-      I3 => \cnt[9]_i_2_n_0\,
+      I3 => \cnt[7]_i_2_n_0\,
       O => \cnt[7]_i_1_n_0\
     );
-\cnt[8]_i_1\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"28888888"
-    )
-        port map (
-      I0 => state(0),
-      I1 => cnt(8),
-      I2 => cnt(7),
-      I3 => \cnt[9]_i_2_n_0\,
-      I4 => cnt(6),
-      O => \cnt[8]_i_1_n_0\
-    );
-\cnt[9]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"2888888888888888"
-    )
-        port map (
-      I0 => state(0),
-      I1 => cnt(9),
-      I2 => cnt(8),
-      I3 => cnt(6),
-      I4 => \cnt[9]_i_2_n_0\,
-      I5 => cnt(7),
-      O => \cnt[9]_i_1_n_0\
-    );
-\cnt[9]_i_2\: unisim.vcomponents.LUT6
+\cnt[7]_i_2\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"8000000000000000"
     )
@@ -326,7 +222,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
       I3 => cnt(0),
       I4 => cnt(2),
       I5 => cnt(4),
-      O => \cnt[9]_i_2_n_0\
+      O => \cnt[7]_i_2_n_0\
     );
 \cnt_reg[0]\: unisim.vcomponents.FDCE
     generic map(
@@ -335,7 +231,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => cnt_n(0),
       Q => cnt(0)
     );
@@ -346,7 +242,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[1]_i_1_n_0\,
       Q => cnt(1)
     );
@@ -357,7 +253,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[2]_i_1_n_0\,
       Q => cnt(2)
     );
@@ -368,7 +264,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[3]_i_1_n_0\,
       Q => cnt(3)
     );
@@ -379,7 +275,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[4]_i_1_n_0\,
       Q => cnt(4)
     );
@@ -390,7 +286,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[5]_i_1_n_0\,
       Q => cnt(5)
     );
@@ -401,7 +297,7 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[6]_i_1_n_0\,
       Q => cnt(6)
     );
@@ -412,95 +308,273 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
+      CLR => AS(0),
       D => \cnt[7]_i_1_n_0\,
       Q => cnt(7)
     );
-\cnt_reg[8]\: unisim.vcomponents.FDCE
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity edge_moore is
+  port (
+    E : out STD_LOGIC_VECTOR ( 0 to 0 );
+    debounce_out : in STD_LOGIC;
+    clk_IBUF_BUFG : in STD_LOGIC;
+    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+end edge_moore;
+
+architecture STRUCTURE of edge_moore is
+  signal \^e\ : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \FSM_sequential_state[0]_i_1__0_n_0\ : STD_LOGIC;
+  signal \FSM_sequential_state[1]_i_1__0_n_0\ : STD_LOGIC;
+  signal state : STD_LOGIC_VECTOR ( 1 to 1 );
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \FSM_sequential_state[0]_i_1__0\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \FSM_sequential_state[1]_i_1__0\ : label is "soft_lutpair3";
+  attribute FSM_ENCODED_STATES : string;
+  attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[0]\ : label is "edge:01,one:10,zero:00,iSTATE:11";
+  attribute FSM_ENCODED_STATES of \FSM_sequential_state_reg[1]\ : label is "edge:01,one:10,zero:00,iSTATE:11";
+begin
+  E(0) <= \^e\(0);
+\FSM_sequential_state[0]_i_1__0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"04"
+    )
+        port map (
+      I0 => \^e\(0),
+      I1 => debounce_out,
+      I2 => state(1),
+      O => \FSM_sequential_state[0]_i_1__0_n_0\
+    );
+\FSM_sequential_state[1]_i_1__0\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"48"
+    )
+        port map (
+      I0 => \^e\(0),
+      I1 => debounce_out,
+      I2 => state(1),
+      O => \FSM_sequential_state[1]_i_1__0_n_0\
+    );
+\FSM_sequential_state_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
-      CLR => rst_IBUF,
-      D => \cnt[8]_i_1_n_0\,
-      Q => cnt(8)
+      CLR => AS(0),
+      D => \FSM_sequential_state[0]_i_1__0_n_0\,
+      Q => \^e\(0)
     );
-\cnt_reg[9]\: unisim.vcomponents.FDCE
+\FSM_sequential_state_reg[1]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
       C => clk_IBUF_BUFG,
       CE => '1',
+      CLR => AS(0),
+      D => \FSM_sequential_state[1]_i_1__0_n_0\,
+      Q => state(1)
+    );
+end STRUCTURE;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity walking_led is
+  port (
+    clk : in STD_LOGIC;
+    rst : in STD_LOGIC;
+    button : in STD_LOGIC;
+    leds : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  attribute NotValidForBitStream : boolean;
+  attribute NotValidForBitStream of walking_led : entity is true;
+end walking_led;
+
+architecture STRUCTURE of walking_led is
+  signal button_IBUF : STD_LOGIC;
+  signal clk_IBUF : STD_LOGIC;
+  signal clk_IBUF_BUFG : STD_LOGIC;
+  signal debounce_out : STD_LOGIC;
+  signal edge_trigger : STD_LOGIC;
+  signal leds_OBUF : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal rst_IBUF : STD_LOGIC;
+  attribute XILINX_LEGACY_PRIM : string;
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[0]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[1]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[2]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[3]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[4]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[5]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[6]\ : label is "LDC";
+  attribute XILINX_LEGACY_PRIM of \led_results_reg[7]\ : label is "LDP";
+begin
+button_IBUF_inst: unisim.vcomponents.IBUF
+     port map (
+      I => button,
+      O => button_IBUF
+    );
+clk_IBUF_BUFG_inst: unisim.vcomponents.BUFG
+     port map (
+      I => clk_IBUF,
+      O => clk_IBUF_BUFG
+    );
+clk_IBUF_inst: unisim.vcomponents.IBUF
+     port map (
+      I => clk,
+      O => clk_IBUF
+    );
+debounce0: entity work.debouncing
+     port map (
+      AS(0) => rst_IBUF,
+      button_IBUF => button_IBUF,
+      clk_IBUF_BUFG => clk_IBUF_BUFG,
+      debounce_out => debounce_out
+    );
+edge0: entity work.edge_moore
+     port map (
+      AS(0) => rst_IBUF,
+      E(0) => edge_trigger,
+      clk_IBUF_BUFG => clk_IBUF_BUFG,
+      debounce_out => debounce_out
+    );
+\led_results_reg[0]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
       CLR => rst_IBUF,
-      D => \cnt[9]_i_1_n_0\,
-      Q => cnt(9)
+      D => leds_OBUF(1),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(0)
     );
-\delay_IBUF[0]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(0),
-      O => delay_IBUF(0)
+\led_results_reg[1]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(2),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(1)
     );
-\delay_IBUF[1]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(1),
-      O => delay_IBUF(1)
+\led_results_reg[2]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(3),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(2)
     );
-\delay_IBUF[2]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(2),
-      O => delay_IBUF(2)
+\led_results_reg[3]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(4),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(3)
     );
-\delay_IBUF[3]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(3),
-      O => delay_IBUF(3)
+\led_results_reg[4]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(5),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(4)
     );
-\delay_IBUF[4]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(4),
-      O => delay_IBUF(4)
+\led_results_reg[5]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(6),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(5)
     );
-\delay_IBUF[5]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(5),
-      O => delay_IBUF(5)
+\led_results_reg[6]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => rst_IBUF,
+      D => leds_OBUF(7),
+      G => edge_trigger,
+      GE => '1',
+      Q => leds_OBUF(6)
     );
-\delay_IBUF[6]_inst\: unisim.vcomponents.IBUF
-     port map (
-      I => delay(6),
-      O => delay_IBUF(6)
+\led_results_reg[7]\: unisim.vcomponents.LDPE
+    generic map(
+      INIT => '1'
+    )
+        port map (
+      D => leds_OBUF(0),
+      G => edge_trigger,
+      GE => '1',
+      PRE => rst_IBUF,
+      Q => leds_OBUF(7)
     );
-\delay_IBUF[7]_inst\: unisim.vcomponents.IBUF
+\leds_OBUF[0]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => delay(7),
-      O => delay_IBUF(7)
+      I => leds_OBUF(0),
+      O => leds(0)
     );
-\delay_IBUF[8]_inst\: unisim.vcomponents.IBUF
+\leds_OBUF[1]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => delay(8),
-      O => delay_IBUF(8)
+      I => leds_OBUF(1),
+      O => leds(1)
     );
-\delay_IBUF[9]_inst\: unisim.vcomponents.IBUF
+\leds_OBUF[2]_inst\: unisim.vcomponents.OBUF
      port map (
-      I => delay(9),
-      O => delay_IBUF(9)
+      I => leds_OBUF(2),
+      O => leds(2)
+    );
+\leds_OBUF[3]_inst\: unisim.vcomponents.OBUF
+     port map (
+      I => leds_OBUF(3),
+      O => leds(3)
+    );
+\leds_OBUF[4]_inst\: unisim.vcomponents.OBUF
+     port map (
+      I => leds_OBUF(4),
+      O => leds(4)
+    );
+\leds_OBUF[5]_inst\: unisim.vcomponents.OBUF
+     port map (
+      I => leds_OBUF(5),
+      O => leds(5)
+    );
+\leds_OBUF[6]_inst\: unisim.vcomponents.OBUF
+     port map (
+      I => leds_OBUF(6),
+      O => leds(6)
+    );
+\leds_OBUF[7]_inst\: unisim.vcomponents.OBUF
+     port map (
+      I => leds_OBUF(7),
+      O => leds(7)
     );
 rst_IBUF_inst: unisim.vcomponents.IBUF
      port map (
       I => rst,
       O => rst_IBUF
-    );
-u_IBUF_inst: unisim.vcomponents.IBUF
-     port map (
-      I => u,
-      O => u_IBUF
-    );
-y_OBUF_inst: unisim.vcomponents.OBUF
-     port map (
-      I => y_OBUF,
-      O => y
     );
 end STRUCTURE;
