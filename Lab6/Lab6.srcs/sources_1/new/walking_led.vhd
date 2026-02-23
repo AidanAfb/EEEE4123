@@ -42,7 +42,9 @@ begin
     begin
     
     if (rst = '1') then led_results <= "10000000";
-    elsif (edge_trigger = '1') then led_results <= led_results(0) & led_results(7 downto 1);
+    elsif (rising_edge(clk)) then
+        if (edge_trigger = '1') then led_results <= led_results(0) & led_results(7 downto 1);
+        end if;
     end if;
     
     leds <= led_results;
