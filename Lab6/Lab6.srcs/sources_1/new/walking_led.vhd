@@ -44,8 +44,10 @@ begin
     process(clk, rst)
     begin
     
+    -- starting with bit 7 on
     if (rst = '1') then led_results <= "10000000";
     elsif (rising_edge(clk)) then
+        -- shifting bit right after each button press
         if (edge_trigger = '1') then led_results <= led_results(0) & led_results(7 downto 1);
         end if;
     end if;
