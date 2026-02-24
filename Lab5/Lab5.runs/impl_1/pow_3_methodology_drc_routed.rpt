@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Feb 23 20:53:01 2026
+| Date         : Tue Feb 24 14:55:18 2026
 | Host         : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
 | Command      : report_methodology -file pow_3_methodology_drc_routed.rpt -pb pow_3_methodology_drc_routed.pb -rpx pow_3_methodology_drc_routed.rpx
 | Design       : pow_3
@@ -23,11 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 73
+             Violations found: 105
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| DPIR-1    | Warning  | Asynchronous driver check     | 48         |
+| DPIR-1    | Warning  | Asynchronous driver check     | 78         |
+| SYNTH-12  | Warning  | DSP input not registered      | 1          |
+| SYNTH-13  | Warning  | combinational multiplier      | 1          |
 | TIMING-18 | Warning  | Missing input or output delay | 25         |
 +-----------+----------+-------------------------------+------------+
 
@@ -271,6 +273,166 @@ Related violations: <none>
 DPIR-1#48 Warning
 Asynchronous driver check  
 DSP mul0/m3i input pin mul0/m3i/B[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#49 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[0] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#50 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[10] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#51 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[11] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#52 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[12] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#53 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[13] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#54 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[14] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#55 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[15] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#56 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[16] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#57 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[17] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#58 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[18] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#59 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[19] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#60 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[1] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#61 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[20] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#62 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[21] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#63 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[22] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#64 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[23] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#65 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[24] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#66 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[25] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#67 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[26] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#68 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[27] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#69 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[28] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#70 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[29] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#71 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[2] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#72 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[3] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#73 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[4] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#74 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[5] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#75 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[6] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#76 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[7] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#77 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[8] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+DPIR-1#78 Warning
+Asynchronous driver check  
+DSP mul1/m3i input pin mul1/m3i/A[9] is connected to registers with an asynchronous reset. This is preventing the possibility of merging these registers in to the DSP Block since the DSP block registers only possess synchronous reset capability.  It is suggested to recode or change these registers to remove the reset or use a synchronous reset to get the best optimization for performance, power and area.
+Related violations: <none>
+
+SYNTH-12#1 Warning
+DSP input not registered  
+DSP instance mul1/m3i is not fully pipelined on the input side. AREG/BREG/CREG/DREG are not used.
+Related violations: <none>
+
+SYNTH-13#1 Warning
+combinational multiplier  
+Detected combinational multiplier in DSP instance mul0/m3i.
 Related violations: <none>
 
 TIMING-18#1 Warning
