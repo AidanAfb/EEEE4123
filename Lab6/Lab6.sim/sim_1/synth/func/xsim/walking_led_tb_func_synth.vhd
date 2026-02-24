@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Mon Feb 23 23:16:14 2026
+-- Date        : Tue Feb 24 10:39:52 2026
 -- Host        : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -mode funcsim -nolib -force -file
 --               C:/Mac/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/walking_led_tb_func_synth.vhd
@@ -18,8 +18,8 @@ entity debouncing is
   port (
     debounce_out : out STD_LOGIC;
     button_IBUF : in STD_LOGIC;
-    clk_IBUF_BUFG : in STD_LOGIC;
-    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
+    CLK : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end debouncing;
 
@@ -96,9 +96,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \FSM_sequential_state[0]_i_1_n_0\,
       Q => state(0)
     );
@@ -107,9 +107,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \FSM_sequential_state[1]_i_1_n_0\,
       Q => \^debounce_out\
     );
@@ -229,9 +229,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => cnt_n(0),
       Q => cnt(0)
     );
@@ -240,9 +240,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[1]_i_1_n_0\,
       Q => cnt(1)
     );
@@ -251,9 +251,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[2]_i_1_n_0\,
       Q => cnt(2)
     );
@@ -262,9 +262,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[3]_i_1_n_0\,
       Q => cnt(3)
     );
@@ -273,9 +273,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[4]_i_1_n_0\,
       Q => cnt(4)
     );
@@ -284,9 +284,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[5]_i_1_n_0\,
       Q => cnt(5)
     );
@@ -295,9 +295,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[6]_i_1_n_0\,
       Q => cnt(6)
     );
@@ -306,9 +306,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \cnt[7]_i_1_n_0\,
       Q => cnt(7)
     );
@@ -321,8 +321,8 @@ entity edge_moore is
   port (
     E : out STD_LOGIC_VECTOR ( 0 to 0 );
     debounce_out : in STD_LOGIC;
-    clk_IBUF_BUFG : in STD_LOGIC;
-    AS : in STD_LOGIC_VECTOR ( 0 to 0 )
+    CLK : in STD_LOGIC;
+    AR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 end edge_moore;
 
@@ -364,9 +364,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \FSM_sequential_state[0]_i_1__0_n_0\,
       Q => \^e\(0)
     );
@@ -375,9 +375,9 @@ begin
       INIT => '0'
     )
         port map (
-      C => clk_IBUF_BUFG,
+      C => CLK,
       CE => '1',
-      CLR => AS(0),
+      CLR => AR(0),
       D => \FSM_sequential_state[1]_i_1__0_n_0\,
       Q => state(1)
     );
@@ -405,15 +405,6 @@ architecture STRUCTURE of walking_led is
   signal edge_trigger : STD_LOGIC;
   signal leds_OBUF : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal rst_IBUF : STD_LOGIC;
-  attribute XILINX_LEGACY_PRIM : string;
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[0]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[1]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[2]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[3]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[4]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[5]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[6]\ : label is "LDC";
-  attribute XILINX_LEGACY_PRIM of \led_results_reg[7]\ : label is "LDP";
 begin
 button_IBUF_inst: unisim.vcomponents.IBUF
      port map (
@@ -432,103 +423,103 @@ clk_IBUF_inst: unisim.vcomponents.IBUF
     );
 debounce0: entity work.debouncing
      port map (
-      AS(0) => rst_IBUF,
+      AR(0) => rst_IBUF,
+      CLK => clk_IBUF_BUFG,
       button_IBUF => button_IBUF,
-      clk_IBUF_BUFG => clk_IBUF_BUFG,
       debounce_out => debounce_out
     );
 edge0: entity work.edge_moore
      port map (
-      AS(0) => rst_IBUF,
+      AR(0) => rst_IBUF,
+      CLK => clk_IBUF_BUFG,
       E(0) => edge_trigger,
-      clk_IBUF_BUFG => clk_IBUF_BUFG,
       debounce_out => debounce_out
     );
-\led_results_reg[0]\: unisim.vcomponents.LDCE
+\led_results_reg[0]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(1),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(0)
     );
-\led_results_reg[1]\: unisim.vcomponents.LDCE
+\led_results_reg[1]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(2),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(1)
     );
-\led_results_reg[2]\: unisim.vcomponents.LDCE
+\led_results_reg[2]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(3),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(2)
     );
-\led_results_reg[3]\: unisim.vcomponents.LDCE
+\led_results_reg[3]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(4),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(3)
     );
-\led_results_reg[4]\: unisim.vcomponents.LDCE
+\led_results_reg[4]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(5),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(4)
     );
-\led_results_reg[5]\: unisim.vcomponents.LDCE
+\led_results_reg[5]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(6),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(5)
     );
-\led_results_reg[6]\: unisim.vcomponents.LDCE
+\led_results_reg[6]\: unisim.vcomponents.FDCE
     generic map(
       INIT => '0'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       CLR => rst_IBUF,
       D => leds_OBUF(7),
-      G => edge_trigger,
-      GE => '1',
       Q => leds_OBUF(6)
     );
-\led_results_reg[7]\: unisim.vcomponents.LDPE
+\led_results_reg[7]\: unisim.vcomponents.FDPE
     generic map(
       INIT => '1'
     )
         port map (
+      C => clk_IBUF_BUFG,
+      CE => edge_trigger,
       D => leds_OBUF(0),
-      G => edge_trigger,
-      GE => '1',
       PRE => rst_IBUF,
       Q => leds_OBUF(7)
     );

@@ -2,3 +2,6 @@ Running: xsim.dir/debouncing_tb_func_synth/xsimk.exe -simmode gui -wdb debouncin
 Design successfully loaded
 Design Loading Memory Usage: 12712 KB (Peak: 12712 KB)
 Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 13688 KB (Peak: 13688 KB)
+Simulation CPU Usage: 15 ms

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Feb 23 22:49:07 2026
+| Date         : Tue Feb 24 10:15:13 2026
 | Host         : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
 | Command      : report_utilization -file walking_led_utilization_synth.rpt -pb walking_led_utilization_synth.pb
 | Design       : walking_led
@@ -34,8 +34,8 @@ Table of Contents
 |   LUT as Logic          |   11 |     0 |     10400 |  0.11 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |   20 |     0 |     20800 |  0.10 |
-|   Register as Flip Flop |   12 |     0 |     20800 |  0.06 |
-|   Register as Latch     |    8 |     0 |     20800 |  0.04 |
+|   Register as Flip Flop |   20 |     0 |     20800 |  0.10 |
+|   Register as Latch     |    0 |     0 |     20800 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
@@ -149,16 +149,15 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDCE     |   12 |        Flop & Latch |
+| FDCE     |   19 |        Flop & Latch |
 | OBUF     |    8 |                  IO |
-| LDCE     |    7 |        Flop & Latch |
 | LUT6     |    5 |                 LUT |
 | LUT3     |    5 |                 LUT |
 | IBUF     |    3 |                  IO |
 | LUT5     |    2 |                 LUT |
 | LUT4     |    2 |                 LUT |
 | LUT2     |    1 |                 LUT |
-| LDPE     |    1 |        Flop & Latch |
+| FDPE     |    1 |        Flop & Latch |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

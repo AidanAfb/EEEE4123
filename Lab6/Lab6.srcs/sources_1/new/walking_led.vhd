@@ -17,7 +17,11 @@ signal debounce_out, edge_out : std_logic;
 signal edge_trigger : std_logic;
 
 begin
-
+    -- delay input for debouncing, set to 20 clock cycles after button press.
+    -- note with current 10ns clock cycle this means a 200ns delay not 20ms like on slides
+    -- done to reduce the simulation time on my laptop TT
+    delay <= std_logic_vector(to_unsigned(20, 8));
+    
     -- Instantiating the debouncing
     debounce0 : entity work.debouncing
     generic map(N => 8)
@@ -28,7 +32,6 @@ begin
         u => button,
         y => debounce_out);
 
--- delay?
 
     -- Instantiating the moore edge detector
     edge0 : entity work.edge_moore

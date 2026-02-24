@@ -34,22 +34,50 @@ begin
     
     stimuli : process
     begin
-        rst <= '1';
-        button <= '0';
+--        rst <= '1';
+--        button <= '0';
         
-        wait for 5*Ts;
-        rst <= '0';
+--        wait for 5*Ts;
+--        rst <= '0';
         
+--        button <= '1';
+--        wait for 50ns;
+--        button <= '0';
+        
+--        wait for 200ns;
+        
+--        button <= '1';
+--        wait for 50ns;
+--        button <= '0';
+        
+--        wait for 200ns;
+
+rst <= '1';
+    button <= '0';
+    wait for 5*Ts;
+    rst <= '0';
+
+    for i in 0 to 15 loop
+
+        -- press with bounce
         button <= '1';
-        wait for 50ns;
+        wait for 5 ns;
         button <= '0';
-        
-        wait for 200ns;
-        
+        wait for 5 ns;
         button <= '1';
-        wait for 50ns;
+        wait for 100 ns;
+
+        -- release with bounce
         button <= '0';
+        wait for 5 ns;
+        button <= '1';
+        wait for 5 ns;
+        button <= '0';
+
+        wait for 200 ns;
+
+    end loop;
+    wait;
         
-        wait;
     end process;
 end Behavioral;
