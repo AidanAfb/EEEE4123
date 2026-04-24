@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"xor_gate_tb_func_synth.vhd" \
-"../../../../../Lab0.srcs/sim_1/imports/Downloads/xor_tb.vhd" \
-
-# Do not sort compile order
-nosort

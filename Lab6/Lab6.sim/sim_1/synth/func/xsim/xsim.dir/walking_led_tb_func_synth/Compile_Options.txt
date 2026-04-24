@@ -1,1 +1,0 @@
--wto "ddfff8b2b38547d9ad6376fe04208b2a" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "walking_led_tb_func_synth" "xil_defaultlib.walking_led_tb" -log "elaborate.log" 

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.sim/sim_1/synth/func/xsim/walking_led_tb_func_synth.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'debouncing'
+INFO: [VRFC 10-3107] analyzing entity 'edge_moore'
+INFO: [VRFC 10-3107] analyzing entity 'walking_led'
+INFO: [VRFC 10-163] Analyzing VHDL file "//psf/Home/Documents/GitHub/EEEE4123/Lab6/Lab6.srcs/sim_1/new/walking_led_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'walking_led_tb'

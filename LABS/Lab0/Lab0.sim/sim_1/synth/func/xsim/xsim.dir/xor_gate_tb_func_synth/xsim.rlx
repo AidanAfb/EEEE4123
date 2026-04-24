@@ -1,0 +1,12 @@
+
+{ 
+    crc :  3380857057312780298  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto 886fcc169f3c4bfab354d714ab414c12 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot xor_gate_tb_func_synth xil_defaultlib.xor_gate_tb" , 
+    buildDate : "Dec  7 2018" , 
+    buildTime : "00:33:28" , 
+    linkCmd : "C:\\Xilinx\\Vivado\\2018.3\\data\\..\\tps\\mingw\\6.2.0\\win64.o\\nt\\bin\\gcc.exe -Wa,-W  -O -Wl,--stack,104857600 -o \"xsim.dir/xor_gate_tb_func_synth/xsimk.exe\"   \"xsim.dir/xor_gate_tb_func_synth/obj/xsim_0.win64.obj\" \"xsim.dir/xor_gate_tb_func_synth/obj/xsim_1.win64.obj\" -L\"C:\\Xilinx\\Vivado\\2018.3\\lib\\win64.o\" -lrdi_simulator_kernel  -lrdi_simbridge_kernel" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 

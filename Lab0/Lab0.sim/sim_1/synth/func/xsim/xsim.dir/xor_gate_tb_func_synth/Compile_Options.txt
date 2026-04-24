@@ -1,1 +1,0 @@
--wto "886fcc169f3c4bfab354d714ab414c12" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "xor_gate_tb_func_synth" "xil_defaultlib.xor_gate_tb" -log "elaborate.log" 
