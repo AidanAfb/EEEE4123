@@ -16,10 +16,10 @@ temp = A * B;
 D = temp * C;
 
 % Convert matrices to hexadecimal arrays
-AHex = dec2hex(A', 2);
-BHex = dec2hex(B', 2);
-CHex = dec2hex(C', 2);
-DHex = dec2hex(D', 8);
+AHex = formatted_hex(A, 2);
+BHex = formatted_hex(B, 2);
+CHex = formatted_hex(C, 2);
+DHex = formatted_hex(D, 8);
 
 % Set output file names
 fileNameA = 'InputA.txt';
@@ -27,23 +27,35 @@ fileNameB = 'InputB.txt';
 fileNameC = 'InputC.txt';
 fileNameD = 'OutputD_matlab.txt';
 
-% Output hexadecimal arrays representung each matrix to .txt files
-fid = fopen(fileNameA, 'w');
-fprintf(fid, '%s\n', string(AHex));
-fclose(fid);
-disp(['File: ' fileNameA ' has been saved.']);
 
-fid = fopen(fileNameB, 'w');
-fprintf(fid, '%s\n', string(BHex));
-fclose(fid);
-disp(['File: ' fileNameB ' has been saved.']);
+write_file(fileNameA, AHex);
+write_file(fileNameB, BHex);
+write_file(fileNameC, CHex);
+write_file(fileNameD, DHex);
 
-fid = fopen(fileNameC, 'w');
-fprintf(fid, '%s\n', string(CHex));
-fclose(fid);
-disp(['File: ' fileNameC ' has been saved.']);
+% Function to deal with negative numbers
+%   Function returns hex_array
+function hex_array = formatted_hex(array, hex_size)
+   [row, col] = size(array);
+   hex_array = strings(row*col, 1);
 
-fid = fopen(fileNameD, 'w');
-fprintf(fid, '%s\n', string(DHex));
-fclose(fid);
-disp(['File: ' fileNameD ' has been saved.']);
+   index = 1;
+   for i = 1:col
+       for j = 1:row
+           number = array(j, i);
+           if number < 0
+               number = 2^(hex_size*4) + number;
+           end
+           hex_array(index) = dec2hex(number, hex_size);
+           index = index + 1;
+       end
+   end
+end
+
+% Function to output hexadecimal arrays representung each matrix to .txt files
+function write_file(filename, hex_array)
+    fid = fopen(filename, 'w');
+    fprintf(fid, '%s\n', string(hex_array));
+    fclose(fid);
+    disp(['File: ' filename ' has been saved.']);
+end
