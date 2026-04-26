@@ -15,7 +15,7 @@ entity MatrixProcessingCore is
            DataReady : out STD_LOGIC);
 end MatrixProcessingCore;
 
-architecture Behavioral of MatrixProcessingCore is
+architecture IntMatMulCore_arch of MatrixProcessingCore is
 
 -- InputBufferA (8 x 16)
 COMPONENT dpram128x8
@@ -89,8 +89,8 @@ END COMPONENT;
 
 -- States definitions and signals
 type stateType is (stIdle, stWriteA, stWriteB, stWriteC, 
-        stStartMul1, stMul1_AB, stWaitWriteTempBuf, stWriteTempBuf, 
-        stIncRowA, stMul2_TC, stWaitWriteOutputBuf, stWriteOutputBufferD,
+        stStartMul1, stMul1AB, stWaitWriteTempBuf, stWriteTempBuf, 
+        stIncRowA, stMul2TC, stWaitWriteOutputBuf, stWriteOutputBufferD,
         stIncRowTemp, stComplete);
         
 signal presState: stateType;
@@ -102,9 +102,10 @@ signal iWriteAddressB : std_logic_vector (7 downto 0);
 signal iWriteAddressC : std_logic_vector (6 downto 0);
 
 signal iReadEnableAB, iReadEnableTC : std_logic;
-signal iReadA : std_logic_vector (6 downto 0);
-signal iReadB : std_logic_vector (7 downto 0);
-signal iReadC : std_logic_vector (6 downto 0);
+signal iReadAddressA : std_logic_vector (6 downto 0);
+signal iReadAddressB : std_logic_vector (7 downto 0);
+signal iReadAddressC : std_logic_vector (6 downto 0);
+signal iReadAddressTemp : std_logic_vector (6 downto 0);
 
 signal iReadDataA, iReadDataB, iReadDataC : std_logic_vector (7 downto 0);
 signal iReadDataTemp : std_logic_vector (19 downto 0);
@@ -113,7 +114,7 @@ signal iMac1Reset, iMac1Enable, iMac2Reset, iMac2Enable : std_logic;
 signal iMac1Result : std_logic_vector (19 downto 0);
 signal iMac2Result : std_logic_vector (31 downto 0);
 
-signal iWriteEnableTemp, iWiteEnableOutput : std_logic_vector (0 downto 0);
+signal iWriteEnableTemp, iWriteEnableOutput : std_logic_vector (0 downto 0);
 signal iWriteAddressTemp : std_logic_vector (6 downto 0);
 signal iWriteAddressOutput : std_logic_vector (5 downto 0);
 
@@ -130,5 +131,228 @@ signal iCountAReset, iCountAEnable, iCountBReset, iCountBEnable, iCountCReset, i
 
 begin
 
+-- Taking matrix inputs
 
-end Behavioral;
+-- Buffer Select based on which matrix being inputted
+iWriteEnableA(0) <= WriteEnable when BufferSel = "00" else '0';
+iWriteEnableB(0) <= WriteEnable when BufferSel = "01" else '0';
+iWriteEnableC(0) <= WriteEnable when BufferSel  = "10" else '0';
+-- Setting the write address
+iWriteAddressA <= WriteAddress (6 downto 0);
+iWriteAddressB <= WriteAddress  (7 downto 0);
+iWriteAddressC <= WriteAddress (6 downto 0);
+
+-- Instantiating the buffers
+InputBufferA : dpram128x8
+    PORT MAP (
+        clka  	=> Clock,
+        wea   	=> iWriteEnableA,
+        addra 	=> iWriteAddressA,
+        dina  	=> WriteData,
+        clkb 	=> Clock,
+        enb		=> iReadEnableAB,
+        addrb 	=> iReadAddressA,
+        doutb 	=> iReadDataA
+    );
+
+InputBufferB : dpram256x8
+    PORT MAP (
+        clka  	=> Clock,
+        wea   	=> iWriteEnableB,
+        addra 	=> iWriteAddressB,
+        dina  	=> WriteData,
+        clkb 	=> Clock,
+        enb		=> iReadEnableAB,
+        addrb 	=> iReadAddressB,
+        doutb 	=> iReadDataB
+    );
+    
+InputBufferC : dpram128x8
+    PORT MAP (
+        clka  	=> Clock,
+        wea   	=> iWriteEnableC,
+        addra 	=> iWriteAddressC,
+        dina  	=> WriteData,
+        clkb 	=> Clock,
+        enb		=> iReadEnableTC,
+        addrb 	=> iReadAddressC,
+        doutb 	=> iReadDataC
+    );
+
+-- MAC1 for A x B
+process(Clock)
+begin
+    if rising_edge(Clock) then
+        if iMac1Reset = '1' then
+            iMac1Result <= (others=>'0');
+        elsif iMac1Enable = '1' then
+            iMac1Result <= std_logic_vector(signed(iReadDataA) * signed(iReadDataB) + signed(iMac1Result));
+        end if;
+    end if;
+end process;
+
+-- MAC2 for Temp * C
+process(Clock)
+begin
+    if rising_edge(Clock) then
+        if iMac2Reset = '1' then
+            iMac2Result <= (others=>'0');
+        elsif iMac2Enable = '1' then
+            iMac2Result <= std_logic_vector(signed(iReadDataTemp) * signed(iReadDataC) + signed(iMac2Result));
+        end if;
+    end if;
+end process;
+
+-- State Machine Clock
+process(Clock)
+begin
+    if rising_edge (Clock) then
+        if Reset = '1' then
+            presState <= stIdle;
+        else
+            presState <= nextState;
+        end if;
+        
+        end if;
+end process;
+
+-- State Machine Process
+process (presState, WriteEnable, BufferSel, iCountA, iCOuntB, iCountC, iRowA, iColA, iColTemp, iRowTemp, iColD)
+begin
+    nextState <= presState;
+    
+    -- Signal Defaults
+    iCountAEnable <= '0';
+    iCountAReset <= '0';
+    
+    iCountBEnable <= '0';
+    iCountBReset <= '0';
+    
+    iCountCEnable <= '0';
+    iCountCReset <= '0';
+    
+    iRowAEnable <= '0';
+    iColAEnable <= '0';
+    iColTempEnable <= '0';
+    iRowTempEnable <= '0';
+    iColDEnable <= '0';
+    
+    iReadEnableAB <= '0';
+    iReadEnableTC <= '0';
+    iMac1Reset <= '0';
+    iMac1Enable <= '0';
+    iMac2Reset <= '0';
+    iMac2Enable <= '0';
+    iWriteEnableTemp(0) <= '0';
+    iWriteEnableOutput(0) <= '0';
+    
+    DataReady <= '0';
+    
+    case presState is
+        when stIdle =>
+            if WriteEnable = '1' then
+                if BufferSel = "01" then
+                    nextState <= stWriteA;
+                elsif BufferSel = "01" then
+                    nextState <= stWriteB;
+                elsif BufferSel = "10" then
+                    nextState <= stWriteC;
+                end if;
+            end if;
+        
+        when stWriteA =>
+            iCountAEnable <= '1';
+            if iCountA = 127 then
+                nextState <= stStartMul1;
+            else
+                nextState <= stWriteA;
+            end if;
+        
+        when stWriteB =>
+            iCountBEnable <= '1';
+            if iCountB = 255 then
+                nextState <= stStartMul1;
+            else
+                nextState <= stWriteB;
+            end if;
+        
+        when stWriteC =>
+            iCountCEnable <= '1';
+            if iCountC = 127 then
+                nextState <= stStartMul1;
+            else
+                nextState <= stWriteC;
+            end if;
+        
+        when stStartMul1 =>
+            iMac1Reset <= '1';
+            nextState <= stMul1AB;
+            
+        
+        when stMul1AB =>
+            iReadEnableAB <= '1';
+            iMac1Enable <= '1';
+            
+            if iColA = 15 then
+                nextState <= stWaitWriteTempBuf;
+            elsif iColTemp = 15 then
+                nextState <= stIncRowA;
+            elsif iRowA = 7 then
+                nextState <= stMul2TC;
+            else
+                iColAEnable <= '1';
+                nextState <= stMul1AB;
+            end if;
+            
+        when stWaitWriteTempBuf =>
+            nextState <= stWriteTempBuf;
+            
+        when stWriteTempBuf =>
+            iWriteEnableTemp(0) <= '1';
+            iMac1Reset <= '1';
+            nextState <= stMul1AB;
+            
+        when stIncRowA =>
+            iRowAEnable <= '1';
+            iColTempReset <= '1';
+            iColAReset <= '1';
+            nextState <= stMul1AB;
+            
+        when stMul2TC =>
+            iReadENableTC <= '1';
+            iMac2Enable <= '1';
+            
+            if iColD = 7 then
+                nextState <= stIncRowTemp;
+            elsif iColTemp = 15 then
+                nextState <= stWaitWriteOutputBuf;
+            elsif iRowTemp = 7 then
+                nextState <= stComplete;
+            else
+                iColTempEnable <= '1';
+                nextState <= stMul2TC;
+            end if;
+            
+        when stWaitWriteOutputBuf =>
+            nextState <= stWriteOutputBufferD;
+        
+        when stWriteOutputBufferD =>
+            iWriteEnableOutput(0) <= '1';
+            iMac2Reset <= '1';
+            nextState <= stIncRowTemp;
+        
+        when stIncRowTemp =>
+            iRowTempEnable <= '1';
+            iColDReset <= '1';
+            iColTempReset <= '1';
+            nextState <= stMul2TC;
+            
+        when stComplete =>
+            DataReady <= '1';
+            nextState <= stIdle;
+            
+    end case;
+end process;
+        
+
+end IntMatMulCore_arch;
