@@ -2,10 +2,10 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Apr 26 15:37:06 2026
-# Process ID: 3948
+# Start of session at: Sun Apr 26 12:24:43 2026
+# Process ID: 12084
 # Current directory: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9436 C:\Mac\Home\Documents\GitHub\EEEE4123\Project\IntMatMulCore\IntMatMulCore.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13460 C:\Mac\Home\Documents\GitHub\EEEE4123\Project\IntMatMulCore\IntMatMulCore.xpr
 # Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/vivado.log
 # Journal file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore\vivado.jou
 #-----------------------------------------------------------
@@ -16,10 +16,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
-open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 734.695 ; gain = 42.816
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 741.633 ; gain = 43.715
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-launch_runs synth_1 -jobs 2
-[Sun Apr 26 16:03:22 2026] Launched synth_1...
-Run output will be captured here: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 26 12:27:56 2026...

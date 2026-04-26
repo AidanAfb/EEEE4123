@@ -17,7 +17,7 @@ end IntMatMulCore;
 
 architecture IntMatMulCore_arch of IntMatMulCore is
 
--- InputBufferA (8 x 16)
+-- InputBuffer A and C (8 x 16)
 COMPONENT dpram128x8
     PORT ( 
         clka : IN STD_LOGIC;
@@ -45,20 +45,6 @@ COMPONENT dpram256x8
         );
 END COMPONENT;
 
--- InputBufferC (16 x 8)
-COMPONENT dpram128x8
-    PORT ( 
-        clka : IN STD_LOGIC;
-        wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
-        addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-        dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        clkb : IN STD_LOGIC;
-        enb : IN STD_LOGIC;
-        addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-        doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
-        );
-END COMPONENT;
-
 -- TempBuffer (A x B result)
 COMPONENT dpram128x20
     PORT ( 
@@ -73,7 +59,7 @@ COMPONENT dpram128x20
         );
 END COMPONENT;
 
--- OutputBufferD (8 x 8)
+-- OutputBufferD (64 x 32)
 COMPONENT dpram64x32
     PORT ( 
         clka : IN STD_LOGIC;
@@ -125,8 +111,8 @@ signal iRowA, iRowTemp : unsigned (2 downto 0);
 signal iColA, iColTemp : unsigned (3 downto 0);
 signal iColD : unsigned (2 downto 0);
 
-signal iCountAReset, iCountAEnable, iCountBReset, iCountBEnable, iCountCReset, iCountCEnable,
-        iRowAReset, iRowAEnable, iColAReset, iColAEnable, iColTempReset, iColTempEnable,
+signal iCountAReset, iCountAEnable, iCountBReset, iCountBEnable, iCountCReset, iCountCEnable : std_logic;
+signal iRowAReset, iRowAEnable, iColAReset, iColAEnable, iColTempReset, iColTempEnable,
         iRowTempReset, iRowTempEnable, iColDReset, iColDEnable : std_logic;
 
 begin
@@ -178,6 +164,30 @@ InputBufferC : dpram128x8
         addrb 	=> iReadAddressC,
         doutb 	=> iReadDataC
     );
+    
+TempBuffer : dpram128x20
+    PORT MAP (
+        clka  	=> Clock,
+        wea   	=> iWriteEnableTemp,
+        addra 	=> iWriteAddressTemp,
+        dina  	=> iMac1Result,
+        clkb 	=> Clock,
+        enb		=> iReadEnableTC,
+        addrb 	=> iReadAddressTemp,
+        doutb 	=> iReadDataTemp
+    );
+    
+OutputBufferD : dpram64x32
+    PORT MAP (
+        clka  	=> Clock,
+        wea   	=> iWriteEnableOutput,
+        addra 	=> iWriteAddressOutput,
+        dina  	=> iMac2Result,
+        clkb 	=> Clock,
+        enb		=> ReadEnable,
+        addrb 	=> ReadAddress,
+        doutb 	=> ReadData
+    );
 
 -- MAC1 for A x B
 process(Clock)
@@ -203,6 +213,87 @@ begin
     end if;
 end process;
 
+
+-- Generating addresses
+
+-- Read addresses for A, 3 bits (iRowA) + 4 bits (iColA)
+iReadAddressA <= std_logic_vector(iRowA & iColA);
+
+-- Read addresses for B, 4 bits (iColA) + 4 bits (iColTemp)
+iReadAddressB <= std_logic_vector(iColA & iColTemp);
+
+-- Read addresses for C, 4 bits (iColTemp) + 3 bits (iColD)
+iReadAddressC <= std_logic_vector(iColTemp & iColD);
+
+-- Read addresses for Temp, 5 bits (iRowA) + 4 bits (iColTemp)
+iReadAddressTemp <= std_logic_vector(iRowA & iColTemp);
+
+-- Write addresses for TempBuffer
+iWriteAddressTemp <= std_logic_vector(iRowA & iColTemp);
+
+-- Write addresses for Output D, 3 bits (iRowTemp) + 3 bits (iColD)
+iWriteAddressOutput <= std_logic_vector(iRowTemp & iColD);
+
+
+-- Counter
+process(Clock)
+begin
+    if rising_edge(Clock) then
+        if iCountAReset = '1' then
+            iCountA <= (others=>'0');
+        elsif iCountAEnable = '1' then
+            iCountA <= iCountA +1;
+        end if;
+        
+        if iCountBReset = '1' then
+            iCountB <= (others=>'0');
+        elsif iCountBEnable = '1' then
+            iCountB <= iCountB +1;
+        end if;
+        
+        if iCountCReset = '1' then
+            iCountC <= (others=>'0');
+        elsif iCountCEnable = '1' then
+            iCountC <= iCountC +1;
+        end if;
+        
+        -- Row counter for A, 0 to 7
+        if iRowAReset = '1' then
+            iRowA <= (others=>'0');
+        elsif iRowAEnable = '1' then
+            iRowA <= iRowA +1;
+        end if;
+        
+        -- Column Counter for A, 0 to 15
+        if iColAReset = '1' then
+            iColA <= (others=>'0');
+        elsif iCOlAEnable = '1' then
+            iColA <= iCOlA +1;
+        end if;
+        
+        -- Row counter for Temp, 0 to 7
+        if iRowTempReset = '1' then
+            iRowTemp <= (others=>'0');
+        elsif iRowTempEnable = '1' then
+            iRowTemp <= iRowTemp +1;
+        end if;
+        
+        -- Column counter for Temp, 0 to 15
+        if iColTempReset = '1' then
+            iColTemp <= (others=>'0');
+        elsif iColTempEnable = '1' then
+            iColTemp <= iColTemp +1;
+        end if;
+        
+        -- Column counter for D, 0 to 7
+        if iColDReset = '1' then
+            iColD <= (others=>'0');
+        elsif iColDEnable = '1' then
+            iCOlD <= iColD +1;
+        end if;
+    end if;
+end process;
+
 -- State Machine Clock
 process(Clock)
 begin
@@ -213,11 +304,11 @@ begin
             presState <= nextState;
         end if;
         
-        end if;
+    end if;
 end process;
 
 -- State Machine Process
-process (presState, WriteEnable, BufferSel, iCountA, iCOuntB, iCountC, iRowA, iColA, iColTemp, iRowTemp, iColD)
+process (presState, WriteEnable, BufferSel, iCountA, iCountB, iCountC, iRowA, iColA, iColTemp, iRowTemp, iColD)
 begin
     nextState <= presState;
     
@@ -232,10 +323,19 @@ begin
     iCountCReset <= '0';
     
     iRowAEnable <= '0';
+    iRowAReset <= '0';
+    
     iColAEnable <= '0';
+    iColAReset <= '0';
+    
     iColTempEnable <= '0';
+    iColTempReset <= '0';
+    
     iRowTempEnable <= '0';
+    iRowTempReset <= '0';
+    
     iColDEnable <= '0';
+    iColDReset <= '0';
     
     iReadEnableAB <= '0';
     iReadEnableTC <= '0';
@@ -251,7 +351,7 @@ begin
     case presState is
         when stIdle =>
             if WriteEnable = '1' then
-                if BufferSel = "01" then
+                if BufferSel = "00" then
                     nextState <= stWriteA;
                 elsif BufferSel = "01" then
                     nextState <= stWriteB;
@@ -263,6 +363,7 @@ begin
         when stWriteA =>
             iCountAEnable <= '1';
             if iCountA = 127 then
+                iCountAReset <= '1';
                 nextState <= stStartMul1;
             else
                 nextState <= stWriteA;
@@ -271,6 +372,7 @@ begin
         when stWriteB =>
             iCountBEnable <= '1';
             if iCountB = 255 then
+                iCountBReset <= '1';
                 nextState <= stStartMul1;
             else
                 nextState <= stWriteB;
@@ -279,6 +381,7 @@ begin
         when stWriteC =>
             iCountCEnable <= '1';
             if iCountC = 127 then
+                iCountCReset <= '1';
                 nextState <= stStartMul1;
             else
                 nextState <= stWriteC;
@@ -286,6 +389,9 @@ begin
         
         when stStartMul1 =>
             iMac1Reset <= '1';
+            iRowAReset <= '1';
+            iColAReset <= '1';
+            iColTempReset <= '1';
             nextState <= stMul1AB;
             
         
@@ -294,12 +400,16 @@ begin
             iMac1Enable <= '1';
             
             if iColA = 15 then
+            -- MAC finished for current element
                 nextState <= stWaitWriteTempBuf;
             elsif iColTemp = 15 then
+            -- Current temp row in buffer
                 nextState <= stIncRowA;
             elsif iRowA = 7 then
+            -- All temp rows calculated
                 nextState <= stMul2TC;
             else
+            -- Incriment column A, normal operation
                 iColAEnable <= '1';
                 nextState <= stMul1AB;
             end if;
@@ -310,6 +420,8 @@ begin
         when stWriteTempBuf =>
             iWriteEnableTemp(0) <= '1';
             iMac1Reset <= '1';
+            iColTempEnable <= '1'; -- Go to the next column
+            iColAReset <= '1'; -- Reset Column A for the next element
             nextState <= stMul1AB;
             
         when stIncRowA =>
@@ -319,14 +431,17 @@ begin
             nextState <= stMul1AB;
             
         when stMul2TC =>
-            iReadENableTC <= '1';
+            iReadEnableTC <= '1';
             iMac2Enable <= '1';
             
             if iColD = 7 then
+            -- ELement complete
                 nextState <= stIncRowTemp;
             elsif iColTemp = 15 then
+            -- Row complete
                 nextState <= stWaitWriteOutputBuf;
             elsif iRowTemp = 7 then
+            -- All complete
                 nextState <= stComplete;
             else
                 iColTempEnable <= '1';
@@ -339,7 +454,13 @@ begin
         when stWriteOutputBufferD =>
             iWriteEnableOutput(0) <= '1';
             iMac2Reset <= '1';
-            nextState <= stIncRowTemp;
+            if iColD = 7 then
+                nextState <= stIncRowTemp;
+            else
+                iColDEnable <= '1';
+                iCOlTempReset <= '1';
+                nextState <= stMul2TC;
+            end if;
         
         when stIncRowTemp =>
             iRowTempEnable <= '1';
