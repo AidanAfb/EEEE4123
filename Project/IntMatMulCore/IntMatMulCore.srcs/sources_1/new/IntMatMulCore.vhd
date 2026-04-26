@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity MatrixProcessingCore is
+entity IntMatMulCore is
     Port ( Reset : in STD_LOGIC;
            Clock : in STD_LOGIC;
            WriteEnable : in STD_LOGIC;
@@ -13,9 +13,9 @@ entity MatrixProcessingCore is
            ReadEnable : in STD_LOGIC;
            ReadData : out STD_LOGIC_VECTOR (31 downto 0);
            DataReady : out STD_LOGIC);
-end MatrixProcessingCore;
+end IntMatMulCore;
 
-architecture IntMatMulCore_arch of MatrixProcessingCore is
+architecture IntMatMulCore_arch of IntMatMulCore is
 
 -- InputBufferA (8 x 16)
 COMPONENT dpram128x8
