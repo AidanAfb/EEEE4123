@@ -575,3 +575,53 @@ selectCodeEditor("IntMatMulCore.vhd", 203, 540); // cl (w, cp)
 selectCodeEditor("IntMatMulCore.vhd", 419, 488); // cl (w, cp)
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// Elapsed time: 131 seconds
+selectCodeEditor("IntMatMulCore.vhd", 389, 432); // cl (w, cp)
+// Elapsed time: 15 seconds
+selectCodeEditor("IntMatMulCore.vhd", 213, 436); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 203, 382); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 207, 434); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 201, 422); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 903 MB. GUI used memory: 66 MB. Current time: 4/26/26, 6:25:15 PM BST
+// Elapsed time: 290 seconds
+selectCodeEditor("IntMatMulCore.vhd", 375, 636); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 401, 468); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 391, 458); // cl (w, cp)
+typeControlKey((HResource) null, "IntMatMulCore.vhd", 'v'); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 63 seconds
+selectCodeEditor("IntMatMulCore.vhd", 469, 510); // cl (w, cp)
+// Elapsed time: 11 seconds
+selectCodeEditor("IntMatMulCore.vhd", 469, 510); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 695, 542); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 53 seconds
+selectCodeEditor("IntMatMulCore.vhd", 719, 514); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 213, 344); // cl (w, cp)
+typeControlKey((HResource) null, "IntMatMulCore.vhd", 'v'); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 625, 478, true, false, false, false, false); // cl (w, cp) - Shift Key
+selectCodeEditor("IntMatMulCore.vhd", 351, 432); // cl (w, cp)
+typeControlKey((HResource) null, "IntMatMulCore.vhd", 'v'); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("IntMatMulCore.vhd", 223, 384); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 223, 384, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("IntMatMulCore.vhd", 233, 480); // cl (w, cp)
+selectCodeEditor("IntMatMulCore.vhd", 233, 480, false, false, false, false, true); // cl (w, cp) - Double Click
+selectCodeEditor("IntMatMulCore.vhd", 473, 476); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 14 seconds
+selectCodeEditor("IntMatMulCore.vhd", 407, 480); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 41 seconds
+selectCodeEditor("IntMatMulCore.vhd", 515, 526); // cl (w, cp)
+// Elapsed time: 64 seconds
+selectCodeEditor("IntMatMulCore.vhd", 483, 164); // cl (w, cp)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE

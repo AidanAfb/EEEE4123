@@ -303,7 +303,6 @@ begin
         else
             presState <= nextState;
         end if;
-        
     end if;
 end process;
 
@@ -327,12 +326,12 @@ begin
     
     iColAEnable <= '0';
     iColAReset <= '0';
+        
+    iRowTempEnable <= '0';
+    iRowTempReset <= '0';
     
     iColTempEnable <= '0';
     iColTempReset <= '0';
-    
-    iRowTempEnable <= '0';
-    iRowTempReset <= '0';
     
     iColDEnable <= '0';
     iColDReset <= '0';
@@ -389,6 +388,7 @@ begin
         
         when stStartMul1 =>
             iMac1Reset <= '1';
+            -- Reset all the counters for the multiplication
             iRowAReset <= '1';
             iColAReset <= '1';
             iColTempReset <= '1';
@@ -434,12 +434,12 @@ begin
             iReadEnableTC <= '1';
             iMac2Enable <= '1';
             
-            if iColD = 7 then
-            -- ELement complete
-                nextState <= stIncRowTemp;
-            elsif iColTemp = 15 then
-            -- Row complete
+            if iColTemp = 15 then
+            -- Element complete
                 nextState <= stWaitWriteOutputBuf;
+            elsif iColD = 7 then
+            -- Row complete, inc to start the next one
+                nextState <= stIncRowTemp;
             elsif iRowTemp = 7 then
             -- All complete
                 nextState <= stComplete;
@@ -454,6 +454,7 @@ begin
         when stWriteOutputBufferD =>
             iWriteEnableOutput(0) <= '1';
             iMac2Reset <= '1';
+            -- After each write inc ColD and rows
             if iColD = 7 then
                 nextState <= stIncRowTemp;
             else
