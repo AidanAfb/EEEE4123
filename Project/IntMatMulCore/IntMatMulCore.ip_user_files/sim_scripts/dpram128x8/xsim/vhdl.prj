@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8_sim_netlist.vhdl" \
+
+nosort

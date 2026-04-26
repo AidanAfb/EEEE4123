@@ -14,108 +14,98 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a15t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 5148 
+INFO: Helper process launched with PID 2880 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 421.969 ; gain = 100.297
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 448.723 ; gain = 103.020
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'IntMatMulCore' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:18]
-INFO: [Synth 8-637] synthesizing blackbox instance 'InputBufferA' of component 'dpram128x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:132]
-INFO: [Synth 8-637] synthesizing blackbox instance 'InputBufferB' of component 'dpram256x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:144]
-INFO: [Synth 8-637] synthesizing blackbox instance 'InputBufferC' of component 'dpram128x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:156]
-WARNING: [Synth 8-6014] Unused sequential element iMac1Result_reg was removed.  [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:173]
-WARNING: [Synth 8-6014] Unused sequential element iMac2Result_reg was removed.  [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:185]
-WARNING: [Synth 8-3848] Net ReadData in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:14]
-WARNING: [Synth 8-3848] Net iCountA in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:107]
-WARNING: [Synth 8-3848] Net iCountB in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:108]
-WARNING: [Synth 8-3848] Net iCountC in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:107]
-WARNING: [Synth 8-3848] Net iRowA in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:110]
-WARNING: [Synth 8-3848] Net iColTemp in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:111]
-WARNING: [Synth 8-3848] Net iColA in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:111]
-WARNING: [Synth 8-3848] Net iRowTemp in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:110]
-WARNING: [Synth 8-3848] Net iColD in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:112]
-WARNING: [Synth 8-3848] Net iReadAddressA in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:91]
-WARNING: [Synth 8-3848] Net iReadAddressB in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:92]
-WARNING: [Synth 8-3848] Net iReadAddressC in module/entity IntMatMulCore does not have driver. [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:93]
+INFO: [Synth 8-3491] module 'dpram128x8' declared at 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram128x8_stub.vhdl:5' bound to instance 'InputBufferA' of component 'dpram128x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:148]
+INFO: [Synth 8-638] synthesizing module 'dpram128x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram128x8_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'dpram256x8' declared at 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram256x8_stub.vhdl:5' bound to instance 'InputBufferB' of component 'dpram256x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:164]
+INFO: [Synth 8-638] synthesizing module 'dpram256x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram256x8_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'dpram128x8' declared at 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram128x8_stub.vhdl:5' bound to instance 'InputBufferC' of component 'dpram128x8' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:180]
+INFO: [Synth 8-3491] module 'dpram128x20' declared at 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram128x20_stub.vhdl:5' bound to instance 'TempBuffer' of component 'dpram128x20' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:196]
+INFO: [Synth 8-638] synthesizing module 'dpram128x20' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram128x20_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'dpram64x32' declared at 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram64x32_stub.vhdl:5' bound to instance 'OutputBufferD' of component 'dpram64x32' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:212]
+INFO: [Synth 8-638] synthesizing module 'dpram64x32' [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/.Xil/Vivado-6028-AIDANALEXAN6AEF/realtime/dpram64x32_stub.vhdl:23]
 INFO: [Synth 8-256] done synthesizing module 'IntMatMulCore' (1#1) [C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd:18]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[31]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[30]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[29]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[28]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[27]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[26]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[25]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[24]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[23]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[22]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[21]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[20]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[19]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[18]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[17]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[16]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[15]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[14]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[13]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[12]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[11]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[10]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[9]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[8]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[7]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[6]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[5]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[4]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[3]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[2]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[1]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[0]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[5]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[4]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[3]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[2]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[1]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[0]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadEnable
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 483.305 ; gain = 161.633
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 505.621 ; gain = 159.918
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 483.305 ; gain = 161.633
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 505.621 ; gain = 159.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 505.621 ; gain = 159.918
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a15tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8/dpram128x8_in_context.xdc] for cell 'InputBufferA'
+Finished Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8/dpram128x8_in_context.xdc] for cell 'InputBufferA'
+Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8/dpram128x8_in_context.xdc] for cell 'InputBufferC'
+Finished Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8/dpram128x8_in_context.xdc] for cell 'InputBufferC'
+Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram256x8/dpram256x8/dpram256x8_in_context.xdc] for cell 'InputBufferB'
+Finished Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram256x8/dpram256x8/dpram256x8_in_context.xdc] for cell 'InputBufferB'
+Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x20/dpram128x20/dpram128x20_in_context.xdc] for cell 'TempBuffer'
+Finished Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x20/dpram128x20/dpram128x20_in_context.xdc] for cell 'TempBuffer'
+Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/dpram64x32/dpram64x32_in_context.xdc] for cell 'OutputBufferD'
+Finished Parsing XDC File [c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/dpram64x32/dpram64x32_in_context.xdc] for cell 'OutputBufferD'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 824.492 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 824.492 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 824.492 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 824.492 ; gain = 478.789
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a15tcpg236-1
 ---------------------------------------------------------------------------------
-INFO: [Device 21-403] Loading part xc7a15tcpg236-1
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 483.305 ; gain = 161.633
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 824.492 ; gain = 478.789
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'presState_reg' in module 'IntMatMulCore'
-INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for InputBufferA. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for InputBufferC. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for InputBufferB. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for TempBuffer. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for OutputBufferD. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 824.492 ; gain = 478.789
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "iCountAReset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCountBReset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "iCountCReset" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "iColAEnable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iColTempEnable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "iColDEnable" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                  stidle |                     000000000001 |                             0000
-                stwritea |                     000000000010 |                             0001
-                stwriteb |                     000000000100 |                             0010
-                stwritec |                     000000001000 |                             0011
-             ststartmul1 |                     000000010000 |                             0100
-                stmul1ab |                     000000100000 |                             0101
-      stwaitwritetempbuf |                     000001000000 |                             0110
-          stwritetempbuf |                     000010000000 |                             0111
-                stmul2tc |                     000100000000 |                             1001
-    stwaitwriteoutputbuf |                     001000000000 |                             1010
-    stwriteoutputbufferd |                     010000000000 |                             1011
-            stincrowtemp |                     100000000000 |                             1100
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'presState_reg' using encoding 'one-hot' in module 'IntMatMulCore'
+INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 483.305 ; gain = 161.633
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 824.492 ; gain = 478.789
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -123,18 +113,34 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 3     
 +---Muxes : 
-	  12 Input     12 Bit        Muxes := 1     
-	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 1     
-	  12 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	  15 Input      1 Bit        Muxes := 14    
+	  16 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 4     
+	  18 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -144,13 +150,30 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module IntMatMulCore 
 Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 3     
 +---Muxes : 
-	  12 Input     12 Bit        Muxes := 1     
-	   3 Input     12 Bit        Muxes := 1     
-	   2 Input     12 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 1     
-	  12 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 3     
+	  15 Input      1 Bit        Muxes := 14    
+	  16 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 4     
+	  18 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -163,60 +186,34 @@ BRAMs: 50 (col length: RAMB18 60 RAMB36 30)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5544] ROM "D2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "nextState" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "nextState" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-3917] design IntMatMulCore has port DataReady driven by constant 0
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[31]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[30]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[29]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[28]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[27]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[26]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[25]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[24]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[23]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[22]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[21]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[20]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[19]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[18]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[17]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[16]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[15]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[14]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[13]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[12]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[11]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[10]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[9]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[8]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[7]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[6]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[5]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[4]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[3]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[2]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[1]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadData[0]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[5]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[4]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[3]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[2]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[1]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadAddress[0]
-WARNING: [Synth 8-3331] design IntMatMulCore has unconnected port ReadEnable
+DSP Report: Generating DSP iMac2Result_reg, operation Mode is: (P+A*B)'.
+DSP Report: register iMac2Result_reg is absorbed into DSP iMac2Result_reg.
+DSP Report: operator iMac2Result0 is absorbed into DSP iMac2Result_reg.
+DSP Report: operator iMac2Result1 is absorbed into DSP iMac2Result_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 824.492 ; gain = 478.789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name   | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|IntMatMulCore | (P+A*B)'    | 20     | 8      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++--------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -224,12 +221,17 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-No constraint files found.
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 861.285 ; gain = 515.582
+---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 861.508 ; gain = 515.805
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -240,20 +242,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[11]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[10]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[9]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[8]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[7]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[6]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[5]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[4]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[3]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[2]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[1]) is unused and will be removed from module IntMatMulCore.
-WARNING: [Synth 8-3332] Sequential element (FSM_onehot_presState_reg[0]) is unused and will be removed from module IntMatMulCore.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -273,14 +263,11 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4649] Removing BlackBox instance InputBufferA of module dpram128x8_bbox_1 having unconnected or no output ports
-INFO: [Synth 8-4649] Removing BlackBox instance InputBufferB of module dpram256x8_bbox_2 having unconnected or no output ports
-INFO: [Synth 8-4649] Removing BlackBox instance InputBufferC of module dpram128x8_bbox_3 having unconnected or no output ports
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -293,7 +280,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -305,72 +292,91 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |dpram128x8    |         2|
+|2     |dpram256x8    |         1|
+|3     |dpram128x20   |         1|
+|4     |dpram64x32    |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT3  |     3|
-|2     |IBUF  |     3|
-|3     |OBUF  |     1|
-|4     |OBUFT |    32|
-+------+------+------+
++------+-------------------+------+
+|      |Cell               |Count |
++------+-------------------+------+
+|1     |dpram128x20_bbox_4 |     1|
+|2     |dpram128x8_bbox_1  |     1|
+|3     |dpram128x8_bbox_3  |     1|
+|4     |dpram256x8_bbox_2  |     1|
+|5     |dpram64x32_bbox_5  |     1|
+|6     |BUFG               |     1|
+|7     |CARRY4             |    18|
+|8     |DSP48E1            |     1|
+|9     |LUT1               |     5|
+|10    |LUT2               |    54|
+|11    |LUT3               |    20|
+|12    |LUT4               |    47|
+|13    |LUT5               |    19|
+|14    |LUT6               |    49|
+|15    |FDRE               |    63|
+|16    |IBUF               |    28|
+|17    |OBUF               |    33|
++------+-------------------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |    39|
+|1     |top      |       |   490|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 105 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 636.691 ; gain = 315.020
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 882.285 ; gain = 217.711
+Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 882.285 ; gain = 536.582
 INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 19 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 748.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 882.285 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+37 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:13 . Memory (MB): peak = 748.172 ; gain = 426.500
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 748.172 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 882.285 ; gain = 548.066
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 882.285 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/synth_1/IntMatMulCore.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file IntMatMulCore_utilization_synth.rpt -pb IntMatMulCore_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 26 16:03:43 2026...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 26 19:54:34 2026...

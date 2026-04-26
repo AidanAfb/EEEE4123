@@ -22,13 +22,27 @@ create_project -in_memory -part xc7a15tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.cache/wt [current_project]
 set_property parent.project_path C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.xpr [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_output_repo c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/new/IntMatMulCore.vhd
+read_ip -quiet C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8.xci
+set_property used_in_implementation false [get_files -all c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x8/dpram128x8_ooc.xdc]
+
+read_ip -quiet C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram256x8/dpram256x8.xci
+set_property used_in_implementation false [get_files -all c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram256x8/dpram256x8_ooc.xdc]
+
+read_ip -quiet C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x20/dpram128x20.xci
+set_property used_in_implementation false [get_files -all c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram128x20/dpram128x20_ooc.xdc]
+
+read_ip -quiet C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/dpram64x32.xci
+set_property used_in_implementation false [get_files -all c:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/dpram64x32_ooc.xdc]
+
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

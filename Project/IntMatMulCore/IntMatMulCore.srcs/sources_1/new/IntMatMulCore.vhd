@@ -21,12 +21,16 @@ architecture IntMatMulCore_arch of IntMatMulCore is
 COMPONENT dpram128x8
     PORT ( 
         clka : IN STD_LOGIC;
+        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
+        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+        dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
 END COMPONENT;
@@ -35,12 +39,16 @@ END COMPONENT;
 COMPONENT dpram256x8
     PORT ( 
         clka : IN STD_LOGIC;
+        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
+        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
 END COMPONENT;
@@ -49,12 +57,16 @@ END COMPONENT;
 COMPONENT dpram128x20
     PORT ( 
         clka : IN STD_LOGIC;
+        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
+        douta : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
+        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
+        dinb : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(19 DOWNTO 0)
         );
 END COMPONENT;
@@ -63,12 +75,16 @@ END COMPONENT;
 COMPONENT dpram64x32
     PORT ( 
         clka : IN STD_LOGIC;
+        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+        douta : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
+        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+        dinb : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
         );
 END COMPONENT;
@@ -132,60 +148,80 @@ iWriteAddressC <= WriteAddress (6 downto 0);
 InputBufferA : dpram128x8
     PORT MAP (
         clka  	=> Clock,
+        ena     => '1',
         wea   	=> iWriteEnableA,
         addra 	=> iWriteAddressA,
         dina  	=> WriteData,
+        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableAB,
+        web     => (others=>'0'),
         addrb 	=> iReadAddressA,
+        dinb    => (others=>'0'),
         doutb 	=> iReadDataA
     );
 
 InputBufferB : dpram256x8
     PORT MAP (
         clka  	=> Clock,
+        ena     => '1',
         wea   	=> iWriteEnableB,
         addra 	=> iWriteAddressB,
         dina  	=> WriteData,
+        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableAB,
+        web     => (others=>'0'),
         addrb 	=> iReadAddressB,
+        dinb    => (others=>'0'),
         doutb 	=> iReadDataB
     );
     
 InputBufferC : dpram128x8
     PORT MAP (
         clka  	=> Clock,
+        ena     => '1',
         wea   	=> iWriteEnableC,
         addra 	=> iWriteAddressC,
         dina  	=> WriteData,
+        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableTC,
+        web     => (others=>'0'),
         addrb 	=> iReadAddressC,
+        dinb    => (others=>'0'),
         doutb 	=> iReadDataC
     );
     
 TempBuffer : dpram128x20
     PORT MAP (
         clka  	=> Clock,
+        ena     => '1',
         wea   	=> iWriteEnableTemp,
         addra 	=> iWriteAddressTemp,
         dina  	=> iMac1Result,
+        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableTC,
+        web     => (others=>'0'),
         addrb 	=> iReadAddressTemp,
+        dinb    => (others=>'0'),
         doutb 	=> iReadDataTemp
     );
     
 OutputBufferD : dpram64x32
     PORT MAP (
         clka  	=> Clock,
+        ena     => '1',
         wea   	=> iWriteEnableOutput,
         addra 	=> iWriteAddressOutput,
         dina  	=> iMac2Result,
+        douta   => open,
         clkb 	=> Clock,
         enb		=> ReadEnable,
+        web     => (others=>'0'),
         addrb 	=> ReadAddress,
+        dinb    => (others=>'0'),
         doutb 	=> ReadData
     );
 
@@ -225,7 +261,7 @@ iReadAddressB <= std_logic_vector(iColA & iColTemp);
 -- Read addresses for C, 4 bits (iColTemp) + 3 bits (iColD)
 iReadAddressC <= std_logic_vector(iColTemp & iColD);
 
--- Read addresses for Temp, 5 bits (iRowA) + 4 bits (iColTemp)
+-- Read addresses for Temp, 3 bits (iRowA) + 4 bits (iColTemp)
 iReadAddressTemp <= std_logic_vector(iRowA & iColTemp);
 
 -- Write addresses for TempBuffer
@@ -242,54 +278,54 @@ begin
         if iCountAReset = '1' then
             iCountA <= (others=>'0');
         elsif iCountAEnable = '1' then
-            iCountA <= iCountA +1;
+            iCountA <= iCountA + 1;
         end if;
         
         if iCountBReset = '1' then
             iCountB <= (others=>'0');
         elsif iCountBEnable = '1' then
-            iCountB <= iCountB +1;
+            iCountB <= iCountB + 1;
         end if;
         
         if iCountCReset = '1' then
             iCountC <= (others=>'0');
         elsif iCountCEnable = '1' then
-            iCountC <= iCountC +1;
+            iCountC <= iCountC + 1;
         end if;
         
         -- Row counter for A, 0 to 7
         if iRowAReset = '1' then
             iRowA <= (others=>'0');
         elsif iRowAEnable = '1' then
-            iRowA <= iRowA +1;
+            iRowA <= iRowA + 1;
         end if;
         
         -- Column Counter for A, 0 to 15
         if iColAReset = '1' then
             iColA <= (others=>'0');
-        elsif iCOlAEnable = '1' then
-            iColA <= iCOlA +1;
+        elsif iColAEnable = '1' then
+            iColA <= iColA + 1;
         end if;
         
         -- Row counter for Temp, 0 to 7
         if iRowTempReset = '1' then
             iRowTemp <= (others=>'0');
         elsif iRowTempEnable = '1' then
-            iRowTemp <= iRowTemp +1;
+            iRowTemp <= iRowTemp + 1;
         end if;
         
         -- Column counter for Temp, 0 to 15
         if iColTempReset = '1' then
             iColTemp <= (others=>'0');
         elsif iColTempEnable = '1' then
-            iColTemp <= iColTemp +1;
+            iColTemp <= iColTemp + 1;
         end if;
         
         -- Column counter for D, 0 to 7
         if iColDReset = '1' then
             iColD <= (others=>'0');
         elsif iColDEnable = '1' then
-            iCOlD <= iColD +1;
+            iColD <= iColD + 1;
         end if;
     end if;
 end process;
@@ -392,6 +428,8 @@ begin
             iRowAReset <= '1';
             iColAReset <= '1';
             iColTempReset <= '1';
+            iRowTempReset <= '1';
+            iCOlDReset <= '1';
             nextState <= stMul1AB;
             
         
@@ -459,7 +497,7 @@ begin
                 nextState <= stIncRowTemp;
             else
                 iColDEnable <= '1';
-                iCOlTempReset <= '1';
+                iColTempReset <= '1';
                 nextState <= stMul2TC;
             end if;
         
@@ -476,5 +514,4 @@ begin
     end case;
 end process;
         
-
 end IntMatMulCore_arch;

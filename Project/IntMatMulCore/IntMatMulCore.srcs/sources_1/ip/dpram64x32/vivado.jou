@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Sun Apr 26 19:19:16 2026
+# Process ID: 3172
+# Current directory: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13260 C:\Mac\Home\Documents\GitHub\EEEE4123\Project\IntMatMulCore\IntMatMulCore.srcs\sources_1\ip\dpram64x32\dpram64x32.dcp
+# Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/vivado.log
+# Journal file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sources_1/ip/dpram64x32/dpram64x32.dcp
