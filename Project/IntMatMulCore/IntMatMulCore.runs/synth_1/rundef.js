@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log IntMatMulCore.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IntMatMulCore.tcl" );
+         "-log IntMatProCore.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IntMatProCore.tcl" );
 
 
 

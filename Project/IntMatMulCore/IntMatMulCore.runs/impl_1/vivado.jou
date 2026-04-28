@@ -2,11 +2,11 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun Apr 26 19:54:50 2026
-# Process ID: 11772
+# Start of session at: Tue Apr 28 16:50:32 2026
+# Process ID: 4160
 # Current directory: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/impl_1
-# Command line: vivado.exe -log IntMatMulCore.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source IntMatMulCore.tcl -notrace
-# Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/impl_1/IntMatMulCore.vdi
+# Command line: vivado.exe -log IntMatProCore.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source IntMatProCore.tcl -notrace
+# Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/impl_1/IntMatProCore.vdi
 # Journal file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source IntMatMulCore.tcl -notrace
+source IntMatProCore.tcl -notrace

@@ -1,0 +1,78 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Tue Apr 28 16:50:58 2026
+| Host         : AIDANALEXAN6AEF running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file IntMatProCore_control_sets_placed.rpt
+| Design       : IntMatProCore
+| Device       : xc7a15t
+------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |     9 |
+| Unused register locations in slices containing registers |    25 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      3 |            1 |
+|      4 |            3 |
+|      6 |            1 |
+|      7 |            2 |
+|      8 |            1 |
+|    16+ |            1 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               3 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               6 |            4 |
+| Yes          | No                    | No                     |              22 |            9 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              32 |           10 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+----------------------+------------------+------------------+----------------+
+|   Clock Signal   |     Enable Signal    | Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------+----------------------+------------------+------------------+----------------+
+|  Clock_IBUF_BUFG |                      |                  |                2 |              3 |
+|  Clock_IBUF_BUFG | iColA0               | iColAReset       |                1 |              4 |
+|  Clock_IBUF_BUFG | iColTemp0            | iColTempReset    |                2 |              4 |
+|  Clock_IBUF_BUFG | presState[3]_i_1_n_0 | Reset_IBUF       |                2 |              4 |
+|  Clock_IBUF_BUFG |                      | iRowAReset       |                4 |              6 |
+|  Clock_IBUF_BUFG | iCountA[6]_i_1_n_0   |                  |                3 |              7 |
+|  Clock_IBUF_BUFG | iCountC              |                  |                3 |              7 |
+|  Clock_IBUF_BUFG | iCountB              |                  |                3 |              8 |
+|  Clock_IBUF_BUFG | enb                  | RSTP             |                5 |             20 |
++------------------+----------------------+------------------+------------------+----------------+
+
+

@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log IntMatMulCore.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IntMatMulCore.tcl
+EAStep vivado -log IntMatProCore.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IntMatProCore.tcl

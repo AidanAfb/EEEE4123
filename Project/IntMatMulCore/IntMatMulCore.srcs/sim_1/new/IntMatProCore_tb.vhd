@@ -149,5 +149,95 @@ begin
     reaading: process is
         file FO: TEXT open WRITE_MODE is "outputD.txt";
         file FI: TEXT open READ_MODE is "outputD_matlab.txt";
-
+        
+        variable lineMatlab : line;
+        variable lineOut : line;
+        
+        variable matlab_data : std_logic_vector(31 downto 0);
+        variable sim_data : std_logic_vector(31 downto 0);
+        variable compare_ok : boolean;
+        
+        variable read_count : integer := 0;
+        variable match_count : integer := 0;
+        variable mismatch_count : integer := 0;
+        
+    begin
+        tb_ReadEnable <= '0';
+        tb_ReadAddress <= (others=>'0');
+        
+        wait until rising_edge(tb_DataReady);
+        wait until falling_edge(tb_DataReady);
+        wait for period;
+        
+        write(lineOut, string'("========"));
+        writeline(FO, lineOut);
+        write(lineOut, string'("Sim Results"));
+        writeline(FO, lineOut);
+        write(lineOut, string'("======="));
+        writeline(FO, lineOut);
+        writeline(FO, lineOut);
+        
+        write(lineOut, string'("Data from Matlab"), left, 20);
+        write(lineOut, string'("Data from Simulation"), left, 20);
+        write(lineOut, string'("Match?"), left, 20);
+        writeline(FO, lineOut);
+        
+        write(lineOut, string'("--------"), left, 20);
+        write(lineOut, string'("--------"), left, 20);
+        write(lineOut, string'("------"), left, 20);
+        writeline(FO, lineOut);
+        
+        tb_ReadEnable <= '1';
+        
+        while not ENDFILE(FI) loop
+            readline(FI, lineMatlab);
+            hread(lineMatlab, matlab_data);
+            
+            wait until rising_edge(tb_Clock);
+            
+            sim_data := tb_ReadData;
+            
+            if matlab_data = sim_data then
+                compare_ok := true;
+                match_count := match_count + 1;
+            else
+                compare_ok := false;
+                mismatch_count := mismatch_count + 1;
+            end if;
+            
+            write(lineOut, read_count, left, 8);
+            hwrite(lineOut, matlab_data, left, 20);
+            hwrite(lineOut, sim_data, left, 20);
+            write(lineOut, compare_ok, left, 8);
+            writeline(FO, lineOut);
+            
+            tb_ReadAddress <= std_logic_vector(unsigned(tb_ReadAddress) + 1);
+            read_count := read_count + 1;
+        end loop;
+        
+        tb_ReadEnable <= '0';
+        
+        writeline(FO, lineOut);
+        write(lineOut, string'("========================================="));
+        writeline(FO, lineOut);
+        write(lineOut, string'("SUMMARY:"));
+        writeline(FO, lineOut);
+        write(lineOut, string'("  Total values read: "), left, 25);
+        write(lineOut, read_count);
+        writeline(FO, lineOut);
+        write(lineOut, string'("  Matches: "), left, 25);
+        write(lineOut, match_count);
+        writeline(FO, lineOut);
+        write(lineOut, string'("  Mismatches: "), left, 25);
+        write(lineOut, mismatch_count);
+        writeline(FO, lineOut);
+        
+        if mismatch_count = 0 then
+            write(lineOut, string'(" Reasult: all match"));
+        else
+            write(lineOut, string'(" Result: fail"));
+        end if;
+        
+        wait;
+    end process;
 end Behavioral;

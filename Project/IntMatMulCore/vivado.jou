@@ -2,26 +2,25 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Mon Apr 27 12:25:03 2026
-# Process ID: 4044
+# Start of session at: Tue Apr 28 09:54:11 2026
+# Process ID: 764
 # Current directory: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4536 C:\Mac\Home\Documents\GitHub\EEEE4123\Project\IntMatMulCore\IntMatMulCore.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent676 C:\Mac\Home\Documents\GitHub\EEEE4123\Project\IntMatMulCore\IntMatMulCore.xpr
 # Log file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/vivado.log
 # Journal file: C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.xpr
 update_compile_order -fileset sources_1
-file mkdir C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sim_1/new
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sim_1/new/IntMatProCore_tb.vhd w ]
-add_files -fileset sim_1 C:/Mac/Home/Documents/GitHub/EEEE4123/Project/IntMatMulCore/IntMatMulCore.srcs/sim_1/new/IntMatProCore_tb.vhd
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
 update_compile_order -fileset sim_1
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top IntMatProCore_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
-update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+open_run impl_1
+launch_simulation
+launch_simulation

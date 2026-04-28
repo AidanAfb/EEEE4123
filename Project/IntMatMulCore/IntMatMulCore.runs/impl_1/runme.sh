@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log IntMatMulCore.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source IntMatMulCore.tcl -notrace
+EAStep vivado -log IntMatProCore.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source IntMatProCore.tcl -notrace
 
 

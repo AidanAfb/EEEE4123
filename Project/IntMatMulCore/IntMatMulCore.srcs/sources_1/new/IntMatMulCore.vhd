@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity IntMatMulCore is
+entity IntMatProCore is
     Port ( Reset : in STD_LOGIC;
            Clock : in STD_LOGIC;
            WriteEnable : in STD_LOGIC;
@@ -13,24 +13,20 @@ entity IntMatMulCore is
            ReadEnable : in STD_LOGIC;
            ReadData : out STD_LOGIC_VECTOR (31 downto 0);
            DataReady : out STD_LOGIC);
-end IntMatMulCore;
+end IntMatProCore;
 
-architecture IntMatMulCore_arch of IntMatMulCore is
+architecture IntMatProCore_arch of IntMatProCore is
 
 -- InputBuffer A and C (8 x 16)
 COMPONENT dpram128x8
     PORT ( 
         clka : IN STD_LOGIC;
-        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
-        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-        dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
 END COMPONENT;
@@ -39,16 +35,12 @@ END COMPONENT;
 COMPONENT dpram256x8
     PORT ( 
         clka : IN STD_LOGIC;
-        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        douta : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
-        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-        dinb : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
         );
 END COMPONENT;
@@ -57,16 +49,12 @@ END COMPONENT;
 COMPONENT dpram128x20
     PORT ( 
         clka : IN STD_LOGIC;
-        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
-        douta : OUT STD_LOGIC_VECTOR(19 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
-        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
-        dinb : IN STD_LOGIC_VECTOR(19 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(19 DOWNTO 0)
         );
 END COMPONENT;
@@ -75,16 +63,12 @@ END COMPONENT;
 COMPONENT dpram64x32
     PORT ( 
         clka : IN STD_LOGIC;
-        ena : IN STD_LOGIC;
         wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addra : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
         dina : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-        douta : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
         clkb : IN STD_LOGIC;
         enb : IN STD_LOGIC;
-        web : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         addrb : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
-        dinb : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
         doutb : OUT STD_LOGIC_VECTOR(31 DOWNTO 0)
         );
 END COMPONENT;
@@ -148,80 +132,60 @@ iWriteAddressC <= WriteAddress (6 downto 0);
 InputBufferA : dpram128x8
     PORT MAP (
         clka  	=> Clock,
-        ena     => '1',
         wea   	=> iWriteEnableA,
         addra 	=> iWriteAddressA,
         dina  	=> WriteData,
-        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableAB,
-        web     => (others=>'0'),
         addrb 	=> iReadAddressA,
-        dinb    => (others=>'0'),
         doutb 	=> iReadDataA
     );
 
 InputBufferB : dpram256x8
     PORT MAP (
         clka  	=> Clock,
-        ena     => '1',
         wea   	=> iWriteEnableB,
         addra 	=> iWriteAddressB,
         dina  	=> WriteData,
-        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableAB,
-        web     => (others=>'0'),
         addrb 	=> iReadAddressB,
-        dinb    => (others=>'0'),
         doutb 	=> iReadDataB
     );
     
 InputBufferC : dpram128x8
     PORT MAP (
         clka  	=> Clock,
-        ena     => '1',
         wea   	=> iWriteEnableC,
         addra 	=> iWriteAddressC,
         dina  	=> WriteData,
-        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableTC,
-        web     => (others=>'0'),
         addrb 	=> iReadAddressC,
-        dinb    => (others=>'0'),
         doutb 	=> iReadDataC
     );
     
 TempBuffer : dpram128x20
     PORT MAP (
         clka  	=> Clock,
-        ena     => '1',
         wea   	=> iWriteEnableTemp,
         addra 	=> iWriteAddressTemp,
         dina  	=> iMac1Result,
-        douta   => open,
         clkb 	=> Clock,
         enb		=> iReadEnableTC,
-        web     => (others=>'0'),
         addrb 	=> iReadAddressTemp,
-        dinb    => (others=>'0'),
         doutb 	=> iReadDataTemp
     );
     
 OutputBufferD : dpram64x32
     PORT MAP (
         clka  	=> Clock,
-        ena     => '1',
         wea   	=> iWriteEnableOutput,
         addra 	=> iWriteAddressOutput,
         dina  	=> iMac2Result,
-        douta   => open,
         clkb 	=> Clock,
         enb		=> ReadEnable,
-        web     => (others=>'0'),
         addrb 	=> ReadAddress,
-        dinb    => (others=>'0'),
         doutb 	=> ReadData
     );
 
@@ -514,4 +478,4 @@ begin
     end case;
 end process;
         
-end IntMatMulCore_arch;
+end IntMatProCore_arch;

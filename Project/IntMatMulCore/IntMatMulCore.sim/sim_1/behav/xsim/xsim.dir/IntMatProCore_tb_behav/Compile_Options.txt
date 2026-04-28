@@ -1,0 +1,1 @@
+-wto "2decf4472dc9493db470f75f3dda4801" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "IntMatProCore_tb_behav" "xil_defaultlib.IntMatProCore_tb" -log "elaborate.log" 
